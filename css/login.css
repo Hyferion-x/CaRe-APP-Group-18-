@@ -1,0 +1,219 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f0f0; /* Set a simple background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Adjusted to support header */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.contact-icons i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account i {
+    margin-right: 5px;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; /* Add some padding to ensure the content is not flush against the edges */
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust transparency here */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: auto; /* Ensures the container is centered */
+    color: white; /* Set all text color to white */
+}
+
+.login-container h1,
+.login-container p,
+.login-container h2,
+.login-container label,
+.login-container a {
+    color: white; /* Ensure headers, labels, and links are white */
+}
+
+.login-form {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centering items horizontally */
+    text-align: center; /* Centering text */
+}
+
+.logo h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #004b8d;
+}
+
+.logo p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #004b8d; /* Adjust this color as needed */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering form elements */
+    width: 100%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%; /* Make labels full-width to align with inputs */
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Full-width inputs */
+}
+
+.options {
+    display: flex;
+    align-items: center; /* Aligns the checkbox and label vertically */
+    justify-content: flex-start; /* Ensures they are aligned to the left */
+    margin-bottom: 20px;
+    width: 100%; /* Full-width container */
+}
+
+.options input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+}
+
+.options label {
+    margin-right: auto;
+}
+
+button {
+    padding: 10px;
+    background-color: #004b8d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Full-width button */
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Additional Styling for Inputs and Buttons */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #004b8d;
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Ensure the layout scales nicely */
+body, html {
+    height: 100%;
+}
+
+/* Ensure the video is always visible and the image is hidden */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#background-image {
+    display: none; /* Always hide the image */
+}
+
+/* Additional media query to handle mobile display */
+@media only screen and (max-width: 768px) {
+    #background-video {
+        display: block; /* Ensure the video is displayed on mobile devices */
+    }
+    
+    #background-image {
+        display: none; /* Ensure the image is hidden on mobile devices */
+}
+
+
+}

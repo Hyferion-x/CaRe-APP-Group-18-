@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.contact-icons i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account i {
+    margin-right: 5px;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Sign-Up Container */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    color: white;
+}
+
+/* Sign-Up Form Styling */
+.signup-form {
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.signup-container h1,
+.signup-container p,
+.signup-container h2,
+.signup-container label,
+.signup-container a {
+    color: white;
+}
+
+.signup-container a {
+    color: #add8e6;
+}
+
+.signup-container a:hover {
+    color: #ffffff;
+}
+
+/* Input and Select Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
+    background-color: #004b8d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Background Video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    #background-video {
+        display: block;
+    }
+}

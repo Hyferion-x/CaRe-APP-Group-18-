@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.contact-icons i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account i {
+    margin-right: 5px;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.welcome-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+.welcome-container h1 {
+    font-size: 36px;
+    color: #004b8d;
+    margin-bottom: 20px;
+}
+
+.welcome-container p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.patient-photo img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #004b8d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #add8e6;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: white;
+}

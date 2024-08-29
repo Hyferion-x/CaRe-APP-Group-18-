@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Calm and Reflect</title>
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+<body>
+
+    <header>
+        <div class="contact-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-facebook"></i>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Appointments</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="welcome-container">
+            <h1>Hello <span id="patient-name"><?php echo $_SESSION['name']; ?></span>!</h1>
+            <p>Let’s check in and start your day with positivity.</p>
+            <div class="patient-photo">
+                <img src="<?php echo $_SESSION['photo']; ?>" alt="Patient Photo">
+            </div>
+            <button id="go-home-button">Go To Home</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Help and FAQs</p>
+        <p>Settings and Preferences</p>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+    </footer>
+
+    <script>
+        document.getElementById('go-home-button').addEventListener('click', function() {
+            window.location.href = 'patient-dashboard.html';
+        });
+    </script>
+
+</body>
+</html>

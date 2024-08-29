@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm and Reflect</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="assets/vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Audio files (commented out if not needed) -->
+    <!-- <audio id="start-sound" src="assets/startupsound.wav" preload="auto"></audio>
+    <audio id="click-sound" src="assets/clicksound.wav" preload="auto"></audio> -->
+
+    <header>
+        <div class="contact-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-facebook"></i>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <div class="logo">
+                    <h1>CaRe</h1>
+                    <p>Calm and Reflect</p>
+                </div>
+                <h2>Welcome Back!</h2>
+                <form action="login.php" method="post">
+                    <label for="username">Email address</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <div class="options">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember Me</label>
+                        <a href="#">Forgot your password?</a>
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

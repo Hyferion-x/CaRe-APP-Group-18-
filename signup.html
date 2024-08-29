@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm and Reflect</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="assets/vid2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <header>
+        <div class="contact-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-facebook"></i>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="signup-container">
+            <div class="signup-form">
+                <div class="logo">
+                    <h1>CaRe</h1>
+                    <p>Calm and Reflect</p>
+                </div>
+                <h2>Create Your Account</h2>
+                <form action="signup.php" method="post" enctype="multipart/form-data">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="photo">Upload Photo</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    
+                    <!-- New User Role Selection -->
+                    <label for="role">Select Role</label>
+                    <select id="role" name="role" required>
+                        <option value="patient">Patient</option>
+                        <option value="therapist">Therapist</option>
+                        <option value="staff">Staff</option>
+                        <option value="auditor">Auditor</option>
+                    </select>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
