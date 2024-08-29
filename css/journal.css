@@ -76,19 +76,32 @@ main {
     flex: 1;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Journal Entries Section */
-.journal-entries {
-    width: 30%;
+/* Row Styles */
+.top-row, .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Journal Entries and Past Entries Sections */
+.journal-entries, .past-entries {
+    width: 48%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 550px; /* Updated maximum height */
 }
 
-.journal-entries h2 {
+.journal-entries h2,
+.past-entries h2 {
     margin-bottom: 20px;
     color: #004b8d;
 }
@@ -120,8 +133,38 @@ main {
     background-color: #003366;
 }
 
-.entry-list {
-    margin-top: 20px;
+.entry-list, .past-entry-list {
+    flex: 1;
+    overflow-y: auto; /* Add vertical scroll */
+}
+
+.entry-list table,
+.past-entries table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.entry-list th, .entry-list td,
+.past-entries th, .past-entries td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.entry-list th,
+.past-entries th {
+    background-color: #004b8d;
+    color: white;
+}
+
+.entry-list tr:nth-child(even),
+.past-entries tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.entry-list tr:hover,
+.past-entries tr:hover {
+    background-color: #ddd;
 }
 
 #new-journal-entry {
@@ -140,39 +183,36 @@ main {
     background-color: #003366;
 }
 
-/* Mood Graph Section */
-.mood-graph {
-    width: 30%;
+/* Mood and Energy Graph Sections */
+.mood-graph, .energy-graph {
+    width: 48%;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+    max-height: 550px; /* Fixed height */
 }
 
-.mood-graph h2 {
+.mood-graph h2,
+.energy-graph h2 {
     color: #004b8d;
     margin-bottom: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-#mood-chart {
-    max-width: 100%;
-}
-
-/* Past Entries */
-.past-entries {
-    width: 30%;
-    background-color: white;
+#mood-chart, #energy-chart {
+    width: 60%; /* Ensure it takes the full width */
+    height: 350px; /* Fixed height for better quality */
+    background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.past-entries h2 {
-    color: #004b8d;
-    margin-bottom: 20px;
-}
-
+/* Filter Section */
 .filter {
     display: flex;
     justify-content: space-between;
@@ -198,26 +238,6 @@ main {
 
 .filter button:hover {
     background-color: #003366;
-}
-
-.past-entries table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.past-entries th, .past-entries td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-.past-entries th {
-    background-color: #004b8d;
-    color: white;
-}
-
-.past-entries td {
-    background-color: white;
 }
 
 /* Footer */

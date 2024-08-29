@@ -33,53 +33,81 @@
 </nav>
 
 <main>
-    <section class="journal-entries">
-        <h2>Journal Entries</h2>
-        <div class="search-entry">
-            <input type="text" id="search-keyword" placeholder="Search by keyword">
-            <button id="search-button">Search</button>
-        </div>
-        <div class="entry-list">
-            <table id="journal-entries-table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Date</th>
-                        <th>Mood</th>
-                        <th>Energy Level</th>
-                        <th>Journal Entry</th>
-                    </tr>
-                </thead>
-                <tbody id="journal-entries">
-                    <!-- Dynamic content for journal entries will be added here -->
-                </tbody>
-            </table>
-        </div>
-        <button id="new-journal-entry">New Journal Entry</button>
-    </section>
+    <!-- Top Row: Journal Entries and Past Journal Entries -->
+    <div class="top-row">
+        <section class="journal-entries">
+            <h2>Journal Entries</h2>
+            <div class="search-entry">
+                <input type="text" id="search-keyword" placeholder="Search by keyword">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="entry-list">
+                <table id="journal-entries-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Date</th>
+                            <th>Mood</th>
+                            <th>Energy Level</th>
+                            <th>Journal Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody id="journal-entries">
+                        <!-- Dynamic content for journal entries will be added here -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="new-journal-entry">New Journal Entry</button>
+        </section>
+        
+        <section class="past-entries">
+            <h2>Past Journal Entries</h2>
+            <div class="filter">
+                <label for="from-date">From</label>
+                <input type="date" id="from-date" name="from-date">
     
-    <section class="mood-graph">
-        <h2>Mood Graph</h2>
-        <canvas id="mood-chart"></canvas>
-    </section>
+                <label for="to-date">To</label>
+                <input type="date" id="to-date" name="to-date">
+                <button type="button" id="filter-button">Filter</button>
+            </div>
+            <div class="past-entry-list">
+                <table id="past-journal-entries-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Date</th>
+                            <th>Mood</th>
+                            <th>Energy Level</th>
+                            <th>Journal Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody id="past-journal-entries">
+                        <!-- Dynamic content for past journal entries will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 
-    <section class="past-entries">
-        <h2>Past Journal Entries</h2>
-        <div class="filter">
-            <label for="from-date">From</label>
-            <input type="date" id="from-date" name="from-date">
-
-            <label for="to-date">To</label>
-            <input type="date" id="to-date" name="to-date">
-            <button type="button" id="filter-button">Filter</button>
-        </div>
-    </section>
+    <!-- Bottom Row: Mood Graph and Energy Level Graph -->
+    <div class="bottom-row">
+        <section class="mood-graph">
+            <h2>Mood Graph</h2>
+            <canvas id="mood-chart"></canvas>
+        </section>
+    
+        <section class="energy-graph">
+            <h2>Energy Level Graph</h2>
+            <canvas id="energy-chart"></canvas>
+        </section>
+    </div>
 </main>
 
-<!-- Modal for New Journal Entry -->
+<!-- Modal for New/Editing Journal Entry -->
 <div id="journal-modal" class="modal">
     <div class="modal-content">
-        <h2>New Journal Entry</h2>
+        <h2 id="modal-title">New Journal Entry</h2>
+        <input type="hidden" id="entry-id">
         <label for="entry-date">Date</label>
         <input type="date" id="entry-date" required>
         <label for="mood">Mood</label>
@@ -99,6 +127,7 @@
         <div class="modal-buttons">
             <button id="cancel-entry">Cancel</button>
             <button id="save-entry">Save</button>
+            <button id="delete-entry" style="display: none;">Delete</button>
         </div>
     </div>
 </div>
