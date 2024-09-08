@@ -81,7 +81,13 @@ main {
 }
 
 /* Row Styles */
-.top-row, .bottom-row {
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bottom-row {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -97,7 +103,7 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-height: 550px; /* Updated maximum height */
+    max-height: 550px;
 }
 
 .journal-entries h2,
@@ -135,7 +141,7 @@ main {
 
 .entry-list, .past-entry-list {
     flex: 1;
-    overflow-y: auto; /* Add vertical scroll */
+    overflow-y: auto;
 }
 
 .entry-list table,
@@ -183,32 +189,32 @@ main {
     background-color: #003366;
 }
 
-/* Mood and Energy Graph Sections */
-.mood-graph, .energy-graph {
-    width: 48%;
+/* Graph Sections */
+.mood-graph, .energy-graph, .custom-mood-graph {
+    width: 30%; /* Set width for each graph to fit three in a row */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 20px;
     text-align: center;
-    max-height: 550px; /* Fixed height */
 }
 
 .mood-graph h2,
-.energy-graph h2 {
+.energy-graph h2,
+.custom-mood-graph h3 {
     color: #004b8d;
-    margin-bottom: 20px;
-    font-size: 24px;
+    margin-bottom: 15px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-#mood-chart, #energy-chart {
-    width: 60%; /* Ensure it takes the full width */
-    height: 350px; /* Fixed height for better quality */
+#mood-chart, #energy-chart, #custom-mood-chart {
+    max-width: 100%;
+    height: auto;
     background-color: #f9f9f9;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -250,7 +256,7 @@ footer {
 
 /* Modal Styling */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
