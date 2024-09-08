@@ -33,6 +33,7 @@ document.getElementById('save-entry').addEventListener('click', function() {
             loadJournalEntries(); // Refresh entries after saving or updating
             loadMoodGraph(); // Refresh the mood graph
             loadEnergyGraph(); // Refresh the energy graph
+            loadCustomMoodGraph(); // Refresh the custom mood graph
         } else {
             alert('Error saving journal entry: ' + data);
         }
@@ -53,6 +54,7 @@ document.getElementById('delete-entry').addEventListener('click', function() {
             loadJournalEntries(); // Refresh entries after deleting
             loadMoodGraph(); // Refresh the mood graph
             loadEnergyGraph(); // Refresh the energy graph
+            loadCustomMoodGraph(); // Refresh the custom mood graph
         } else {
             alert('Error deleting journal entry: ' + data);
         }
@@ -97,6 +99,10 @@ function loadJournalEntries(searchKeyword = '', fromDate = '', toDate = '', targ
 
                 targetContainer.appendChild(row);
             });
+
+            if (targetTable === 'past-journal-entries') {
+                loadCustomMoodGraph(data); // Load custom mood graph with filtered data
+            }
         });
 }
 
@@ -205,6 +211,57 @@ function loadEnergyGraph() {
         });
 }
 
+// Function to load custom mood graph
+function loadCustomMoodGraph(data = []) {
+    const canvas = document.getElementById('custom-mood-chart');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous graph
+
+    const moodMap = {
+        '😄': 'happy',
+        '😃': 'excited',
+        '😰': 'anxious',
+        '😣': 'sad'
+    };
+
+    const colors = ['#00f5d4', '#00bbf9', '#f7845c', '#ff006e'];
+    const moodCounts = { 'happy': 0, 'excited': 0, 'anxious': 0, 'sad': 0 };
+    const totalEntries = data.length;
+
+    // Count the occurrences of each mood
+    data.forEach(entry => {
+        if (moodCounts.hasOwnProperty(entry.mood)) {
+            moodCounts[entry.mood]++;
+        }
+    });
+
+    const moods = Object.keys(moodCounts);
+    const percentages = moods.map(mood => totalEntries ? (moodCounts[mood] / totalEntries) * 100 : 0);
+
+    // Set spacing between each emoji
+    const spacing = canvas.width / (moods.length + 1);
+
+    // Draw mood icons and percentage bars
+    moods.forEach((mood, index) => {
+        const emoji = Object.keys(moodMap).find(key => moodMap[key] === mood);
+        const percentage = percentages[index];
+        const xPos = (index + 1) * spacing; // Calculate x position based on index and spacing
+
+        // Draw mood emoji
+        ctx.font = '30px Arial';
+        ctx.fillText(emoji, xPos - 15, 40); // Center emoji over the bar
+
+        // Draw percentage bar
+        ctx.fillStyle = colors[index];
+        ctx.fillRect(xPos - 25, 50, 50, percentage * 1.5); // Center bar under emoji
+
+        // Draw percentage text
+        ctx.fillStyle = '#333';
+        ctx.font = '14px Arial';
+        ctx.fillText(`${Math.round(percentage)}%`, xPos - 15, 95); // Center percentage text
+    });
+}
+
 // Search button functionality
 document.getElementById('search-button').addEventListener('click', function() {
     const searchKeyword = document.getElementById('search-keyword').value;
@@ -223,4 +280,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadJournalEntries();
     loadMoodGraph(); // Load the mood graph when the page loads
     loadEnergyGraph(); // Load the energy graph when the page loads
+    loadCustomMoodGraph(); // Load the custom mood graph when the page loads
 });
