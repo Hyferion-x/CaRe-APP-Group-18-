@@ -1,0 +1,343 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main{
+    flex-grow: 1; 
+   
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #021720fb;
+    padding: 5px 30px;
+    color: white;
+    font-size: 14px;
+   
+}
+
+.contact-icons {
+    display: flex; 
+    align-items: center;
+}
+
+.contact-icons a {
+    display: inline-block;
+    margin-right: 10px; 
+   
+}
+
+.contact-icons img {
+    width: 20px; 
+    height: 20px; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+}
+.search{
+float: left;
+margin-left: 600px;
+margin-bottom: 5px;
+}
+
+.srch{
+font-family: 'Times New Roman';
+width: 200px;
+height: 15px;
+background: transparent;
+border: 1px solid #ff7300c0;
+margin-top: 3px;
+margin-top: 3px;
+color: #ddd;
+border-right: none;
+font-size: 14px;
+float: left;
+padding: 14px;
+border-bottom-left-radius:5px ;
+border-top-left-radius: 5px;
+}
+
+.srch_pateint{
+    font-family: 'Times New Roman';
+    width: 180px;
+    height: 15px;
+    background: transparent;
+    border: 1px solid #ff7300c0;
+    margin-top: 3px;
+    margin-top: 3px;
+    color: #ddd;
+    font-size: 14px;
+    float: right;
+    padding: 14px;
+    border-radius:5px ;
+
+}
+.srch_btn, .general-info_btn{
+    width: 80px;
+    height: 29px;
+    background: #ff7300cb;
+    border: 2px solid #ff73005a;
+    margin-top: 3px;
+    color: #fff;
+    font-size: 12px;
+    border-bottom-right-radius: 5px;
+    float: right;
+}
+
+.srch_btn:hover, .general-info_btn:hover{
+   
+    filter: brightness(1.2); 
+}
+
+.srch_btn:focus,.general-info_btn:focus{
+    outline: none;
+}
+.srch:focus{
+    outline: none;
+}
+
+
+
+.nav-right {
+    display: flex;
+    align-items: right;
+}
+
+.nav-right a {
+    color: rgb(243, 235, 235);
+    font-family: Arial;
+    margin-left: 15px;
+    text-decoration: none;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-right a:hover {
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+}
+
+.main {
+    margin-top: 45px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%);
+    background-image: url('/assets/image/background.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+
+  
+}
+
+.navbar {
+
+    display: flex;         
+    justify-content: space-between;
+    align-items: center;        
+    padding: 5px 50px;
+    background-color: #13272f9e;
+}
+
+.icon {
+    display: flex;         
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;       
+}
+
+.logo {
+    color: #ff7200;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    flex-grow: 1;              
+    text-align: right;         
+}
+
+.menu ul {
+    display: inline-flex;    
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-left: 30px;    
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.menu ul li a:hover {
+    color: #ff7200;
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+    
+}
+
+.patient_info {
+    width: 400px;
+    height: 455px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+.info-card {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom: 350px;
+    left: 45px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.patient_info h2, .mygroup h3 , .notifications h3, .sessions h3 , .calender h3 {
+    margin-top: -10px; /* Moves the text to the right to avoid overlap with the picture */
+    padding-bottom: 10px;
+    text-align: center;
+    color: #efaa29;
+}
+.patientList {
+    margin-left: 30px;
+    margin-top: 30px;
+    }
+
+    
+.group_btn{
+  
+    background: #ff7300cb;
+    border: 2px solid #ff73005a;
+    margin-top: 3px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    float: right;
+    padding: 10px;
+    bottom: 100px;
+
+}
+
+.group_btn:hover{
+   
+    filter: brightness(1.2); 
+}
+
+.group_btn:focus{
+    outline: none;
+}
+
+.mygroup , .notifications {
+    width: 400px;
+    height: 230px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom: 790px;
+    left: 430px;
+    margin-top: 3px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.mygroup-container, .notifications-container {
+    width: 340px;
+    height: 150px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    top: 10px;
+    left: 5px;
+    border-radius: 10px;
+    padding: 25px;
+    padding-top: 10px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.sessions , .calender {
+    width: 400px;
+    height: 230px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom:1255px;
+    left: 840px;
+    margin-top: 3px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.sessions-container, .calender-container {
+    width: 340px;
+    height: 150px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    top: 10px;
+    left: 5px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #02172096;
+    padding: 10px 500px;
+    z-index: 1000;
+    box-sizing: border-box;
+}

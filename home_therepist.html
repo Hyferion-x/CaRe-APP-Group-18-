@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My profile </title>
+    <link rel="stylesheet" href="/css/home_therapist.css">
+</head>
+
+<body>
+
+   <!-- Header -->
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="/assets/image/phone.png" alt="Phone"></a>
+            <a href="#"><img src="/assets/image/envelope.png" alt="Email"></a>
+            <a href="#"><img src="/assets/image/facebook.png" alt="Facebook"></a>
+        </div>
+
+            <div class="search">
+            <input class="srch" type="search" name="" placeholder="Type to text">
+            <a href="#"> <button class="srch_btn">Search</button></a> 
+            </div>
+            <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+
+    <div class="main">
+
+        <div class="navbar">
+            <div class="icon">
+                <img src="/assets/image/logo.png" alt="My Logo" class="logo-img">
+                <h2 class="logo">CaRe</h2>
+            </div>
+        
+            <div class="menu">
+                <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Patient</a></li>
+                <li><a href="#">Group</a></li>
+                <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="patient_info">  
+           <h2 >My Patient</h2>
+        </div>
+        <div class="info-card">
+
+            <div class="patient-list">
+            <label>Search patients: </label>
+            <input type="text"  class="srch_pateint" placeholder="Search patients..." onkeyup="searchPatient()">
+
+                <ul class="patientList">
+                    <br><br><li class="patient-item">John Doe</li>
+                    <li class="patient-item">Jane Smith</li>
+                    <li class="patient-item">Michael Johnson</li>
+                    <li class="patient-item">Sarah Connor</li>
+                    <li class="patient-item">Tom Hardy</li>
+                </ul>
+                <button type="createGroup" class="group_btn" onclick="window.location.href='home_therapist';">Create Group</button>
+            </div>
+          </div> 
+
+
+<div class="mygroup">
+    <h3>My Group</h3>
+ <div class="mygroup-container">
+    <div class="patient-list">
+        <label>Search Group: </label>
+        <input type="text"  class="srch_pateint" placeholder="Search patients..." onkeyup="searchPatient()">
+
+            <ul class="patientList">
+                <li class="patient-item">Group 01</li>
+                <li class="group-item">Group 02</li>
+                <li class="group-item">Group 03</li>
+                <li class="group-item">Group 04</li>
+                <li class="group-item">Group 05</li>
+            </ul>
+        </div>
+    </div>
+</div>          
+ 
+<div class="notifications">
+    <h3> Notifications </h3>
+        <div class="notifications-container">
+           
+        </div>
+</div>
+
+<div class="sessions">
+    <h3>Sessions </h3>
+    <div class="sessions-container">
+       
+    </div>
+</div>
+
+<div class="calender">
+    <h3>Calender </h3>
+    <div class="calender-container">
+        
+    </div>
+</div>  
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group</p>
+    </footer>
+    
+    <script src="/scripts/home_therapist.js"></script>
+
+</body>
+</html>
