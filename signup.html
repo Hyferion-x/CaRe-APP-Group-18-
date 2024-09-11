@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calm and Reflect</title>
+    <title>Calm and Reflect - Signup</title>
     <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -35,35 +35,73 @@
                     <p>Calm and Reflect</p>
                 </div>
                 <h2>Create Your Account</h2>
-                <form action="signup.php" method="post" enctype="multipart/form-data">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
-                    
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                    
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                    
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
 
-                    <label for="photo">Upload Photo</label>
-                    <input type="file" id="photo" name="photo" accept="image/*">
-                    
-                    <!-- New User Role Selection -->
-                    <label for="role">Select Role</label>
-                    <select id="role" name="role" required>
-                        <option value="patient">Patient</option>
-                        <option value="therapist">Therapist</option>
-                        <option value="staff">Staff</option>
-                        <option value="auditor">Auditor</option>
-                    </select>
-                    
-                    <button type="submit">Sign Up</button>
+                <form action="signup.php" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <!-- Left Column -->
+                        <div class="form-column">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="photo">Upload Photo</label>
+                            <input type="file" id="photo" name="photo" accept="image/*">
+
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone">
+
+                            <label for="mobile">Mobile</label>
+                            <input type="text" id="mobile" name="mobile">
+
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" rows="3"></textarea>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="form-column">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+
+                            <label for="birthday">Birthday</label>
+                            <input type="date" id="birthday" name="birthday">
+
+                            <label for="allergies">Allergies</label>
+                            <input type="text" id="allergies" name="allergies">
+
+                            <label for="blood_type">Blood Type</label>
+                            <input type="text" id="blood_type" name="blood_type">
+
+                            <label for="insurance_id">Insurance ID</label>
+                            <input type="text" id="insurance_id" name="insurance_id">
+
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" name="bio" rows="3"></textarea>
+
+                            <label for="role">Select Role</label>
+                            <select id="role" name="role" required>
+                                <option value="patient">Patient</option>
+                                <option value="therapist">Therapist</option>
+                                <option value="staff">Staff</option>
+                                <option value="auditor">Auditor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="full-width">Sign Up</button>
                 </form>
                 <p>Already have an account? <a href="login.html">Login</a></p>
             </div>

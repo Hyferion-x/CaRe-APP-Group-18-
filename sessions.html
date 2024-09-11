@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions - Therapist Dashboard</title>
+    <link rel="stylesheet" href="css/sessions.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Sessions">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html">Patients</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="sessions.html" class="active">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sessions Section -->
+        <div class="container">
+            <!-- Left Section - List of Sessions -->
+            <div class="left-section">
+                <h2>Sessions</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Session">
+                    <button>Search</button>
+                </div>
+                <div class="session-list">
+                    <h3>List of Sessions</h3>
+                    <ul>
+                        <li>ID9030 - 22/08/2024</li>
+                        <li>ID9045 - 01/09/2024</li>
+                    </ul>
+                </div>
+                <button class="create-session">Create Session</button>
+            </div>
+
+            <!-- Right Section - Session Details -->
+            <div class="right-section">
+                <h2>Session Details</h2>
+
+                <div class="session-details">
+                    <div class="session-info">
+                        <h3>Session ID: ID9030</h3>
+                        <p><strong>Date:</strong> 22/08/2024</p>
+                        <p><strong>Time:</strong> 10:30 AM</p>
+                        <p><strong>Therapist:</strong> Dr. John Doe</p>
+                        <p><strong>Status:</strong> Completed</p>
+                    </div>
+
+                    <!-- Session Notes Section -->
+                    <div class="notes">
+                        <h3>Session Notes</h3>
+                        <textarea placeholder="Add session notes..."></textarea>
+                        <button class="save-note-btn">Save Notes</button>
+                    </div>
+
+                    <!-- Additional Section - Patient Status -->
+                    <div class="patient-status">
+                        <h3>Patient Status</h3>
+                        <div class="status-group">
+                            <label for="state-of-mind">State of Mind:</label>
+                            <select id="state-of-mind">
+                                <option value="Good">Good</option>
+                                <option value="Stable">Stable</option>
+                                <option value="Critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="status-group">
+                            <label for="emotions">Emotions:</label>
+                            <select id="emotions">
+                                <option value="Happy">Happy</option>
+                                <option value="Neutral">Neutral</option>
+                                <option value="Sad">Sad</option>
+                            </select>
+                        </div>
+                        <button class="update-status-btn">Update Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+</body>
+</html>

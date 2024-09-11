@@ -1,0 +1,546 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    min-height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex-grow: 1; 
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #021720fb;
+    padding: 5px 30px;
+    color: white;
+    font-size: 14px;
+}
+
+.contact-icons {
+    display: flex; 
+    align-items: center;
+}
+
+.contact-icons a {
+    display: inline-block;
+    margin-right: 10px; 
+   
+}
+
+.contact-icons img {
+    width: 20px; 
+    height: 20px; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+}
+.search{
+float: left;
+margin-left: 600px;
+margin-bottom: 5px;
+}
+
+.srch{
+font-family: 'Times New Roman';
+width: 200px;
+height: 15px;
+background: transparent;
+border: 1px solid #ff7300c0;
+margin-top: 3px;
+margin-top: 3px;
+color: #ddd;
+border-right: none;
+font-size: 14px;
+float: left;
+padding: 14px;
+border-bottom-left-radius:5px ;
+border-top-left-radius: 5px;
+}
+
+.srch_btn, .general-info_btn{
+    width: 80px;
+    height: 29px;
+    background: #ff7300cb;
+    border: 2px solid #ff73005a;
+    margin-top: 3px;
+    color: #fff;
+    font-size: 12px;
+    border-bottom-right-radius: 5px;
+    float: right;
+}
+
+.srch_btn:hover, .general-info_btn:hover{
+   
+    filter: brightness(1.2); 
+}
+
+.srch_btn:focus,.general-info_btn:focus{
+    outline: none;
+}
+.srch:focus{
+    outline: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: right;
+}
+
+.nav-right a {
+    color: rgb(243, 235, 235);
+    font-family: Arial;
+    margin-left: 15px;
+    text-decoration: none;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-right a:hover {
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+}
+
+.main {
+    margin-top: 45px;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%);
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+}
+
+.navbar {
+
+    display: flex;         
+    justify-content: space-between;
+    align-items: center;        
+    padding: 5px 50px;
+    background-color: #13272f9e;
+}
+
+.icon {
+    display: flex;         
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 10px;       
+}
+
+.logo {
+    color: #ff7200;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    flex-grow: 1;              
+    text-align: right;         
+}
+
+.menu ul {
+    display: inline-flex;    
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-left: 30px;    
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.menu ul li a:hover {
+    color: #ff7200;
+    transform: scale(1.2); 
+    filter: brightness(1.2); 
+    
+}
+
+.patient_info {
+    width: 310px;
+    height: 420px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+#profilePic {
+    position: absolute;
+    left:75px ;
+    top:-30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the picture round */
+    object-fit: cover; /* Ensures the image fits inside the box */
+    border: 3px solid #fff; /* Optional: adds a border around the image */
+    cursor: pointer;
+}
+
+#profilePicContainer {
+    position: relative;
+    display: inline-block;
+  }
+
+.patient_info h2 {
+    margin-left: -80px; 
+    margin-top: 50px; /* Moves the text to the right to avoid overlap with the picture */
+    padding-bottom: 100px;
+    padding-top: 20px;
+    padding-left: 85px;
+    text-align: center;
+    color: #ff7200;
+}
+
+/* Container for the profile dropdown */
+.profile_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The profile menu image */
+#menu_img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.profile_dropdown img{
+    bottom: 220px;
+    left: 250px;
+}
+
+
+
+/* Hidden by default */
+.dropdown {
+    display: none;
+    position: absolute;
+    bottom: 150px;
+    left: 260px;
+    right: 0;
+    background-color: rgba(3, 54, 56, 0.979);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(28, 27, 27, 0.443);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 5px 0;
+   
+}
+
+/* Styling the dropdown list */
+.dropdown li {
+    list-style-type: none;
+}
+
+.dropdown li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: rgb(242, 240, 240);
+    font-size: 14px;
+}
+
+.dropdown li a:hover {
+    background-color: #0bc4b4c2;
+    color: rgb(12, 12, 12);
+}
+
+/* Show the dropdown when the 'show' class is added */
+.show {
+    display: block;
+}
+ 
+.modal, .generalForm {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(6, 50, 53); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content, .form-container {
+    background-color: #1d3337;
+    margin: 10% 32%; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #ff7200;
+    width: 100%; /* Could be more or less, depending on screen size */
+    max-width: 900px; /* Max width */
+    height: 420px;
+    border-radius: 8px; /* Rounded corners */
+    color: #0b0b0b;
+ 
+}
+
+.modal-content h2 ,.form-container h2{
+    margin-left: 5px; /* Moves the text to the right to avoid overlap with the picture */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color:#ff7200;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-top: 3px;
+    color: rgb(240, 233, 233);
+    font-size: 14px;
+ 
+}
+
+.form-group input {
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #e7e4e4cf;
+    color: rgb(5, 5, 5);
+}
+
+.form-group textarea {
+    padding: 8px;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #e7e4e4ab;
+    color:white;
+}
+/* Full-width Button */
+.full-width {
+    grid-column: span 2;
+    text-align: left;
+}
+
+ .save_btn {
+    padding: 8px 10px;
+    background-color: #ff7300cb;
+    border: none;
+    border-radius: 4px;
+    color: rgba(245, 242, 242, 0.856);
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    float: right;
+ }
+
+
+ .save_btn:hover {
+    background-color: #ff7300e0;
+}
+
+.close {
+    color: #aaa;
+    float:  right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-card {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom: 240px;
+    left: 50px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+ 
+  .info-row {
+    display: flex;
+  }
+  
+  
+  .info-column {
+    flex: 50%;
+    padding: 10px;
+    height: 300px; 
+  }
+
+.info-header h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.info-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Overview{
+    width: 900px;
+    height: 220px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom: 650px;
+    left: 350px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.Analysis{
+    width: 900px;
+    height: 600px;
+    background: linear-gradient(to top, rgba(55, 76, 80, 0.491) 50%, rgba(55, 76, 80, 0.491) 50%);
+    position: relative;
+    bottom: 645px;
+    left: 350px;
+    border-radius: 10px;
+    padding: 25px;
+    color: #ddd;
+    box-sizing: border-box;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -120px;
+}
+
+.info-column {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.info-column:last-child {
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+   
+}
+
+input[type="number"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+#display-info {
+    background-color: #ff7300cb;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width:100% ;
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgba(245, 242, 242, 0.856);   
+}
+
+#display-info:hover {
+    background-color: #ff9d00cc;
+    color: black;
+}
+
+#display-section {
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#display-section p {
+    margin: 5px 0;
+    padding-top: 10px;
+}
+
+.info-card h3, .Overview h3, .Analysis h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f4b114;
+}
+
+.general-info p{
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #02172096;
+    padding: 10px 550px;
+    z-index: 1000;
+    box-sizing: border-box;
+}

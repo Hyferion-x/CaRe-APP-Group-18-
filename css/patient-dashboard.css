@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Body Styling */
 body {
-    background-color: #f0f0f0;
+    background-color: #f7f9fc;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -19,9 +19,10 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    background-color: #002f5d;
     color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-icons i {
@@ -41,6 +42,7 @@ header {
 .account a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 
 /* Navigation Bar */
@@ -57,79 +59,82 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f0f0f0;
+    color: #ffd700;
 }
 
 /* Main Content */
 main {
     flex: 1;
-    padding: 20px;
+    padding: 20px 40px;
+    background-color: #f7f9fc;
 }
 
 /* Weekly Overview */
 .weekly-overview {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin-bottom: 30px;
 }
 
 .weekly-overview h2 {
-    margin-bottom: 20px;
     color: #004b8d;
+    margin-bottom: 20px;
 }
 
 .overview-charts {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .chart {
     width: 23%;
+    background-color: #eaf3ff;
+    padding: 15px;
+    border-radius: 8px;
     text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 .chart h3 {
+    color: #004b8d;
     margin-bottom: 10px;
-    color: #666;
 }
 
 /* Daily Snapshot */
 .daily-snapshot {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.snapshot,
-.affirmation,
-.appointments,
-.treatment-plan {
-    width: 23%;
+.snapshot, .affirmation, .appointments, .treatment-plan {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    width: 23%;
 }
 
-.snapshot h3,
-.affirmation h3,
-.appointments h3,
-.treatment-plan h3 {
-    margin-bottom: 20px;
+.snapshot h3, .affirmation h3, .appointments h3, .treatment-plan h3 {
     color: #004b8d;
+    margin-bottom: 20px;
 }
 
 button {
@@ -160,6 +165,7 @@ button:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #002f5d;
     color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }

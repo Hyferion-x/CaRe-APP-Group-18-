@@ -25,6 +25,7 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .contact-icons i {
@@ -54,42 +55,49 @@ main {
     height: 100vh;
     width: 100%;
     padding: 20px;
+    z-index: 2;
 }
 
 /* Sign-Up Container */
 .signup-container {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    max-width: 800px; /* Increased width for two-column layout */
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     margin: auto;
     color: white;
 }
 
 /* Sign-Up Form Styling */
 .signup-form {
-    padding: 30px;
-    width: 100%;
+    padding: 30px 40px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-column {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-basis: 48%; /* Each column takes about half of the available width */
 }
 
 .signup-container h1,
 .signup-container p,
-.signup-container h2,
-.signup-container label,
-.signup-container a {
+.signup-container h2 {
     color: white;
+    text-align: center;
+    width: 100%;
 }
 
 .signup-container a {
     color: #add8e6;
+    text-align: center;
 }
 
 .signup-container a:hover {
@@ -101,17 +109,32 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="file"],
+textarea,
 select {
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
+    background-color: #ffffff;
+    color: #000;
 }
 
-/* Button Styles */
-button {
-    padding: 10px;
+input[type="file"] {
+    padding: 3px;
+}
+
+select {
+    height: 45px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Full-width Button */
+button.full-width {
+    padding: 12px;
     background-color: #004b8d;
     color: #fff;
     border: none;
@@ -119,9 +142,10 @@ button {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+button.full-width:hover {
     background-color: #003366;
 }
 
@@ -156,7 +180,19 @@ footer p {
 
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 768px) {
-    #background-video {
-        display: block;
+    .signup-container {
+        max-width: 90%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 15px;
     }
 }
