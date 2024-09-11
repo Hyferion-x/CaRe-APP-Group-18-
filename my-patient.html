@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Patients</title>
+    <link rel="stylesheet" href="css/my-patient.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Patient">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html" class="active">Patients</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="sessions.html">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Patient Section -->
+        <div class="container">
+            <div class="left-section">
+                <h2>My Patient</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Patient">
+                    <button>Search</button>
+                </div>
+                <div class="patient-list">
+                    <h3>List of Patients</h3>
+                    <ul>
+                        <li>Tony Richards</li>
+                        <li>Tracy DeSanta</li>
+                    </ul>
+                </div>
+                <button class="create-group">Create Group</button>
+            </div>
+
+            <div class="right-section">
+                <h2>Individual Patient Profile</h2>
+                <div class="profile-details">
+                    <div class="info">
+                        <p><strong>Name:</strong> Tony Richards</p>
+                        <p><strong>Age:</strong> 32</p>
+                        <p><strong>Patient ID:</strong> 12345</p>
+                        <img src="images/profilepic.jpg" alt="Profile Picture">
+                    </div>
+                    <div class="session-history">
+                        <h3>Session History</h3>
+                        <!-- Chart or table for session history -->
+                        <img src="images/session-chart.png" alt="Session History Chart">
+                    </div>
+                </div>
+
+                <div class="notes-section">
+                    <h3>Journal Entries:</h3>
+                    <textarea placeholder="Journal Entries"></textarea>
+
+                    <h3>Activity Log:</h3>
+                    <textarea placeholder="Activity Log"></textarea>
+
+                    <h3>Private Notes:</h3>
+                    <textarea placeholder="Private Notes"></textarea>
+
+                    <button class="save-note">Save Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+</body>
+</html>

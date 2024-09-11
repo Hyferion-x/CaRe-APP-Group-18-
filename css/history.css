@@ -1,0 +1,184 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #001f3f; /* Dark blue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    color: white;
+    z-index: 1000;
+}
+
+header .contact-icons a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.search {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.search .srch {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+.search .srch_btn {
+    padding: 10px;
+    background-color: #0074D9; /* Blue */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-right a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-top: 60px;
+    background-color: #001f3f; /* Dark blue */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .icon .logo {
+    color: #0074D9; /* Lighter blue */
+}
+
+.navbar .menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar .menu ul li {
+    margin-left: 30px;
+}
+
+.navbar .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.navbar .menu ul li a:hover {
+    color: #0074D9; /* Lighter blue on hover */
+}
+
+.main {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+/* History Section */
+.history-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.history-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #001f3f;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.history-card {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border: 1px solid #0074D9;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.history-card h3 {
+    color: #0074D9;
+    margin-bottom: 10px;
+}
+
+.history-card p {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.history-card:hover {
+    transform: scale(1.05);
+}
+
+.details-btn {
+    padding: 10px 15px;
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #005f99;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    background-color: #0074D9;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #005f99;
+}
+
+footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
