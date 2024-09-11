@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Calm and Reflect</title>
+    <link rel="stylesheet" href="css/therapist_dashboard.css">
+</head>
+<body>
+
+    <header>
+        <div class="contact-icons">
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-facebook"></i>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="therapist_dashboard.html">Home</a></li>
+            <li><a href="#">Patients</a></li>
+            <li><a href="#">Groups</a></li> 
+            <li><a href="#">Appointments</a></li>            
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="dashboard-container">
+
+            <!-- My Patient Section -->
+            <div class="my-patient box">
+                <h3>My Patient</h3>
+                <input type="text" id="patient-search" placeholder="Search Patient">
+                <div class="list-container">
+                    <ul id="patient-list">
+                        <li>Tony Richards</li>
+                        <li>Tracy DeSanta</li> 
+                        <!-- Hard coded for the moment being -->
+                    </ul>
+                </div>
+                <button>Create Group</button>
+            </div>
+
+            <!-- My Groups Section -->
+            <div class="my-groups box">
+                <h3>My Groups</h3>
+                <input type="text" id="group-search" placeholder="Search Group">
+                <div class="list-container">
+                    <ul id="group-list">
+                        <li>Group 1</li>
+                        <li>Group 2</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notifications Section -->
+            <div class="notifications box">
+                <h3>Notifications</h3>
+                <div class="list-container">
+                    <ul id="notification-list">
+                        <li>Session ID 9030 Therapy Session coming up</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sessions Section -->
+            <div class="sessions box">
+                <h3>Sessions</h3>
+                <input type="text" id="session-search" placeholder="Search Session">
+                <div class="list-container">
+                    <ul id="session-list">
+                        <li>Session ID 9030 - Group 1 - 22/08/2024</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Calendar Section -->
+            <div class="calendar box">
+                <h3>Calendar</h3>
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td class="appointment">3</td> 
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>6</td>
+                            <td class="appointment">7</td> 
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td class="appointment">17</td> 
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td class="appointment">20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td> 
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>27</td>
+                            <td class="appointment">28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td> 
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+        <p><a href="#">Help and FAQs</a> | <a href="#">Settings and Preferences</a></p>
+    </footer>
+
+</body>
+</html>
