@@ -1,4 +1,4 @@
-/* General*/
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +7,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9; 
-    color: #333;
+    background-color: #1e1e1e; /* Dark background */
+    color: #c0c0c0; /* Light text color */
     padding: 20px;
 }
 
 .container {
     width: 100%;
     margin: 0 auto;
-    background-color: white;
+    background-color: #333;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow similar to the dashboard */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .page-header {
@@ -29,10 +29,40 @@ body {
 .page-title {
     font-size: 26px;
     font-weight: bold;
-    color: #004085; /* Dark blue for headers */
+    color: white;
 }
 
-/* Table*/
+/* Navigation Bar */
+nav {
+    background-color: #2c2c2c !important;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: #c0c0c0 !important;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #575757 !important;
+    color: white !important;
+}
+
+/* Table */
 .summary-section {
     margin-top: 20px;
 }
@@ -41,7 +71,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
-    background-color: white;
+    background-color: #2c2c2c;
     border-radius: 8px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
 }
@@ -49,22 +79,21 @@ body {
 .summary-table th, .summary-table td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #444;
 }
 
 .summary-table th {
-    background-color: #007bff;
+    background-color: #444;
     color: white;
     font-weight: bold;
 }
 
 .summary-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #3a3a3a;
 }
 
-/* Hover colour */
 .summary-table tr:hover {
-    background-color: #e2e6ea;
+    background-color: #575757;
 }
 
 @media (max-width: 768px) {
