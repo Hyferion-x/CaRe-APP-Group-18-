@@ -1,0 +1,232 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e3f2fd; /* Light blue */
+    color: #333; /* Dark gray text */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0d47a1; /* Dark blue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+header .contact-icons a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.search {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.search .srch {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f5f5f5; /* Light gray */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.search .srch_btn {
+    padding: 10px;
+    background-color: #0074D9; /* Blue */
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search .srch_btn:hover {
+    background-color: #005bb5; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+.nav-right a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbar {
+    margin-top: -66px;
+    background-color: #0d47a1; /* Dark blue */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.navbar .icon .logo {
+    color: #80d8ff; /* Lighter blue logo */
+}
+
+.navbar .menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar .menu ul li {
+    margin-left: 30px;
+}
+
+.navbar .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.navbar .menu ul li a:hover {
+    color: #80d8ff; /* Hover state light blue */
+}
+
+/* Main content and Appointments Section */
+.main {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.appointments-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white; /* Main content background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0074D9; /* Blue */
+    font-size: 1.8rem;
+}
+
+/* Appointment Card Styling */
+.appointment-card {
+    background-color: #f9f9f9; /* Off-white */
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #0074D9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.appointment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.appointment-card h3 {
+    color: #0074D9; /* Blue heading */
+    margin-bottom: 10px;
+}
+
+.appointment-card p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Buttons */
+.view-details-btn {
+    padding: 10px 15px;
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.view-details-btn:hover {
+    background-color: #005bb5; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+/* Book Appointment Section */
+.book-appointment {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.book-appointment button {
+    padding: 12px 20px;
+    background-color: #0074D9;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-appointment button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #80d8ff; /* Light blue hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header,
+    .navbar,
+    .appointments-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .appointments-section {
+        padding: 15px;
+    }
+}

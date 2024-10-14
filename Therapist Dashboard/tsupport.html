@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Request</title>
+    <link rel="stylesheet" href="../Therapist Dashboard/tsupport.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search">
+            <button class="srch_btn">Search</button>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="therapist-dashboard.html">Home</a></li>
+            <li><a href="my-patient.html">Patients</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="tsupport.html" class="active">Support</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="support-section">
+        <h2>Support Request</h2>
+
+        <div class="support-card">
+            <form>
+                <div class="form-group">
+                    <label for="search-patient">Search Patient</label>
+                    <input type="text" id="search-patient" placeholder="Search Patient">
+                </div>
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" placeholder="Enter Patient Name">
+                </div>
+                <div class="form-group">
+                    <label for="patient-id">Patient ID</label>
+                    <input type="text" id="patient-id" placeholder="Enter Patient ID">
+                </div>
+                <div class="form-group">
+                    <label for="support-type">Select Support</label>
+                    <select id="support-type">
+                        <option value="Technical">Technical</option>
+                        <option value="Billing">Billing</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" placeholder="Enter support details"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy; Group 18 - WebX.Js Group 2024</p>
+    </footer>
+
+</body>
+</html>

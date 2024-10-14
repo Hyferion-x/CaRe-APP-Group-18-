@@ -1,0 +1,432 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e3f2fd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0d47a1;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.search input {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: -1060px;
+}
+
+.search input:focus {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+}
+
+.search button {
+    padding: 10px 20px;
+    background-color: #0074D9;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.search button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+.nav-right a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #0074D9;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #0d47a1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #005bb5;
+}
+
+.logo {
+    color: #80d8ff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 116, 217, 0.5);
+}
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin-left: 20px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: #80d8ff;
+    text-shadow: 0 2px 8px rgba(0, 116, 217, 0.7);
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 30px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Left Section */
+.left-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 35%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.left-section h2 {
+    color: #0074D9;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.group-list ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.group-list ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #e0f7ff;
+    border: 1px solid #0074D9;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: space-between; /* Ensure the button aligns to the right */
+    align-items: center;
+}
+
+.group-list ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Create Group Input and Button */
+.create-group-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#create-group-btn {
+    padding: 12px 20px;
+    margin-left: 10px;
+    background-color: #0074D9;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#create-group-btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 91, 181, 0.3);
+}
+
+
+#create-group-btn:active {
+    transform: translateY(1px);
+    background-color: #003d8e;
+}
+
+#create-group-btn {
+    width: auto; /* Adjust the button size */
+}
+
+#new-group-name {
+    padding: 12px 20px;
+    width: 80%; /* Adjust the width to your preference */
+    max-width: 400px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background-color: rgba(0, 116, 217, 0.1);
+    color: #0074D9;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Add shadow */
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+#new-group-name::placeholder {
+    color: #0074D9;
+    font-weight: 300;
+}
+
+#new-group-name:focus {
+    background-color: rgba(0, 116, 217, 0.05);
+    border-color: #0074D9; /* Border color on focus */
+    box-shadow: 0 0 10px rgba(0, 116, 217, 0.7); /* Focus shadow effect */
+}
+
+
+
+/* Right Section */
+.right-section {
+    background-color: #f9f9f9;
+    padding: 30px;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.right-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.right-section h2 {
+    color: #0074D9;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Group Details Section */
+.group-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.group-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.group-box h3 {
+    color: #0074D9;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+#group-members {
+    list-style-type: none;
+    padding: 0;
+}
+
+#group-members li {
+    background-color: #e0f7ff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #0074D9;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-member-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-member-btn:hover {
+    background-color: darkred;
+}
+
+.add-member-btn {
+    padding: 12px 20px;
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-member-btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: red;
+}
+
+#patients {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove Group Button Styling */
+.remove-group-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.remove-group-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Remove Button Styling */
+.remove-btn {
+    padding: 8px 16px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background-color: #e60000;
+    transform: translateY(-2px);
+}
+
+.remove-btn:active {
+    transform: translateY(1px);
+    background-color: #cc0000;
+}
+

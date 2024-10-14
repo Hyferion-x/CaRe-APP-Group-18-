@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Patient Dashboard/profile.css">
+</head>
+<body>
+
+
+<header>
+    <div class="header-container">
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Appointments">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </div>
+</header>
+
+
+<nav>
+    <ul>
+        <li><a href="patient-dashboard.html">Home</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
+        <li><a href="support.html">Support</a></li>
+    </ul>
+</nav>
+
+
+<div class="profile-container">
+    
+    <div class="profile-sidebar">
+        <div class="profile-header">
+            <img id="profile-photo" src="default-avatar.png" alt="User Photo">
+            <h2 id="profile-name">Loading...</h2>
+            <p id="profile-bio">Loading...</p>
+        </div>
+
+        <div class="profile-info">
+            <h3>Contact Information</h3>
+            <form id="edit-contact-form">
+                <div class="form-group">
+                    <label for="edit-address">Address:</label>
+                    <input type="text" id="edit-address" name="address" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="edit-mobile">Mobile:</label>
+                    <input type="text" id="edit-mobile" name="mobile" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="edit-phone">Phone:</label>
+                    <input type="text" id="edit-phone" name="phone" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email:</label>
+                    <input type="email" id="edit-email" name="email" disabled>
+                </div>
+                
+                <div class="button-container">
+                    <button type="button" id="edit-btn">Edit</button>
+                    <button type="submit" id="save-btn" style="display: none;">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="profile-details-section">
+        <h3>Personal Information</h3>
+        <form id="edit-profile-form">
+            <div class="form-group">
+                <label for="edit-username">Username:</label>
+                <input type="text" id="edit-username" name="username" disabled>
+            </div>
+            <div class="form-group">
+                <label for="edit-gender">Gender:</label>
+                <select id="edit-gender" name="gender" disabled>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-birthday">Birthday:</label>
+                <input type="date" id="edit-birthday" name="birthday" disabled>
+            </div>
+
+            
+            <h3>Health Information</h3>
+            <div class="form-group">
+                <label for="edit-blood-type">Blood Type:</label>
+                <input type="text" id="edit-blood-type" name="blood_type" disabled>
+            </div>
+            <div class="form-group">
+                <label for="edit-allergies">Allergies:</label>
+                <input type="text" id="edit-allergies" name="allergies" disabled>
+            </div>
+            <div class="form-group">
+                <label for="edit-insurance-id">Insurance ID:</label>
+                <input type="text" id="edit-insurance-id" name="insurance_id" disabled>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<footer>
+    <p>Help and FAQs</p>
+    <p>Settings and Preferences</p>
+    <p>&copy; Group 18 - WebX.Js Group 2024</p>
+</footer>
+
+<script src="../scripts/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Patient Dashboard/journal.css">
+</head>
+<body>
+
+<header>
+    <div class="contact-icons">
+        <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+        <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+        <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+    </div>
+    <div class="search">
+        <input class="srch" type="search" placeholder="Search Appointments">
+        <a href="#"><button class="srch_btn">Search</button></a>
+    </div>
+    <div class="account">
+        <i class="fa fa-user"></i>
+        <a href="#">My Account</a>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="patient-dashboard.html">Home</a></li>
+        <li><a href="journal.html" class="active">Journal</a></li>
+        <li><a href="activity.html">Activities</a></li>
+        <li><a href="appointments.html">Appointments</a></li>
+        
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="support.html">Support</a></li>
+    </ul>
+</nav>
+
+<main>
+    
+    <div class="top-row">
+        <section class="journal-entries">
+            <h2>Journal Entries</h2>
+            <div class="search-entry">
+                <input type="text" id="search-keyword" placeholder="Search by keyword">
+                <button id="search-button">Search</button>
+            </div>
+            <div class="entry-list">
+                <table id="journal-entries-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Date</th>
+                            <th>Mood</th>
+                            <th>Energy Level</th>
+                            <th>Journal Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody id="journal-entries">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <button id="new-journal-entry">New Journal Entry</button>
+        </section>
+        
+        <section class="past-entries">
+            <h2>Past Journal Entries</h2>
+            <div class="filter">
+                <label for="from-date">From</label>
+                <input type="date" id="from-date" name="from-date">
+    
+                <label for="to-date">To</label>
+                <input type="date" id="to-date" name="to-date">
+                <button type="button" id="filter-button">Filter</button>
+            </div>
+            <div class="past-entry-list">
+                <table id="past-journal-entries-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Date</th>
+                            <th>Mood</th>
+                            <th>Energy Level</th>
+                            <th>Journal Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody id="past-journal-entries">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    
+    <div class="bottom-row">
+        <section class="mood-graph">
+            <h2>Mood Graph</h2>
+            <canvas id="mood-chart"></canvas>
+        </section>
+    
+        <section class="energy-graph">
+            <h2>Energy Level Graph</h2>
+            <canvas id="energy-chart"></canvas>
+        </section>
+
+        <section class="custom-mood-graph">
+            <h3>How Are You Feeling?</h3>
+            <canvas id="custom-mood-chart"></canvas>
+        </section>
+    </div>
+</main>
+
+
+<div id="journal-modal" class="modal">
+    <div class="modal-content">
+        <h2 id="modal-title">New Journal Entry</h2>
+        <input type="hidden" id="entry-id">
+        <label for="entry-date">Date</label>
+        <input type="date" id="entry-date" required>
+        <label for="mood">Mood</label>
+        <select id="mood">
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="anxious">Anxious</option>
+            <option value="excited">Excited</option>
+        </select>
+
+        <label for="energy">Energy Level</label>
+        <input type="range" id="energy" min="1" max="10">
+
+        <label for="entry">Journal Entry</label>
+        <textarea id="entry" rows="5"></textarea>
+
+        <div class="modal-buttons">
+            <button id="cancel-entry">Cancel</button>
+            <button id="save-entry">Save</button>
+            <button id="delete-entry" style="display: none;">Delete</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Help and FAQs</p>
+    <p>Settings and Preferences</p>
+    <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+</footer>
+
+<script src="../scripts/journal.js"></script>
+
+</body>
+</html>

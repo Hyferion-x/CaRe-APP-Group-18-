@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Patient Dashboard/patient-dashboard.css">
+</head>
+<body>
+
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Appointments">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="account">
+            <a href="#"><i class="fa fa-user"></i> My Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="patient-dashboard.html">Home</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="activity.html">Activities</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section class="weekly-overview">
+            <h2>Weekly Overview</h2>
+
+            
+            <div class="date-filter">
+                <label for="from-date">From</label>
+                <input type="date" id="from-date" name="from-date">
+                
+                <label for="to-date">To</label>
+                <input type="date" id="to-date" name="to-date">
+                
+                <button id="filter-button">Filter</button>
+            </div>
+
+            <div class="overview-charts">
+                <div class="chart">
+                    <h3>Mood Graph</h3>
+                    <canvas id="moodGraph" width="400" height="200"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Energy Level Graph</h3>
+                    <canvas id="energyGraph" width="400" height="200"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>How Are You Feeling?</h3>
+                    <canvas id="feelingGraph" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex-container">
+            
+            <section class="appointments">
+                <h3>Upcoming Appointments</h3>
+                <ul id="appointments-list">
+                    
+                </ul>
+            </section>
+
+            
+            <section class="affirmations">
+                <h3>Today's Affirmation</h3>
+                <select id="affirmation-select">
+                    <option value="">Select Affirmation</option>
+                    <option value="I am strong and capable.">I am strong and capable.</option>
+                    <option value="I believe in myself.">I believe in myself.</option>
+                    <option value="I am grateful for everything I have.">I am grateful for everything I have.</option>
+                    <option value="I embrace challenges and grow from them.">I embrace challenges and grow from them.</option>
+                    
+                </select>
+            </section>
+        </div>
+
+        
+        <div class="log-buttons">
+            <button id="new-journal-entry">New Journal Entry</button>
+            <button id="log-activity">Log Activity</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+        <p><a href="#">Help and FAQs</a> | <a href="#">Settings and Preferences</a></p>
+    </footer>
+
+    
+    <script src="../scripts/patient-dashboard.js"></script>
+</body>
+</html>
