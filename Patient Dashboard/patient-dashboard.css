@@ -1,0 +1,344 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #e3f2fd;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icons i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account i {
+    margin-right: 5px;
+}
+
+.account a {
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #0074D9;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #004b8d;
+    border-radius: 5px;
+    text-shadow: 0 4px 10px rgba(0, 116, 217, 0.7);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+}
+
+/* Weekly Overview */
+.weekly-overview {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.weekly-overview:hover {
+    transform: translateY(-5px);
+}
+
+.weekly-overview h2 {
+    color: #0074D9;
+    margin-bottom: 20px;
+}
+
+.overview-charts {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chart {
+    width: 30%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.chart h3 {
+    color: #0074D9;
+    margin-bottom: 10px;
+}
+
+/* Date Filter */
+.date-filter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.date-filter label {
+    font-weight: bold;
+    color: #0074D9;
+}
+
+.date-filter input {
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.date-filter input:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.date-filter button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #0074D9;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.date-filter button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Appointments Section */
+.appointments {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.appointments:hover {
+    transform: translateY(-3px);
+}
+
+.appointments h3 {
+    color: #0074D9;
+    margin-bottom: 20px;
+}
+
+#appointments-list p {
+    background-color: #e0f7ff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#appointments-list p:hover {
+    background-color: #80d8ff;
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #0074D9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d47a1;
+    color: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #80d8ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+}
+
+/* Search Bar Styling */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.srch {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1rem;
+    width: 300px;
+    margin-left: -620px;
+}
+
+.srch:focus {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+    outline: none;
+}
+
+.srch::placeholder {
+    color: #0074D9;
+    font-weight: 300;
+}
+
+.srch_btn {
+    padding: 12px 20px;
+    background-color: #0074D9;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.srch_btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Flex Container */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.appointments, .affirmations {
+    width: 45%;
+}
+
+/* Affirmation Section Styles */
+.affirmations {
+    margin: -8px 0;
+    padding: 1px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.affirmations h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0074D9;
+}
+
+#affirmation-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #0074D9;
+    background-color: #ffffff;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#affirmation-select:hover,
+#affirmation-select:focus {
+    border-color: #005bb5;
+    box-shadow: 0 0 10px rgba(0, 91, 181, 0.2);
+}
+
+/* Add a slight shadow when the dropdown is clicked */
+#affirmation-select:focus {
+    box-shadow: 0 4px 12px rgba(0, 91, 181, 0.3);
+}

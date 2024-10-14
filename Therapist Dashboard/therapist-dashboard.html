@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapist Dashboard</title>
+    <link rel="stylesheet" href="../Therapist Dashboard/therapist-dashboard.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Patient">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html">Patients</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="sessions.html">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="dashboard-content">
+            
+            <div class="dashboard-section">
+                <h2>My Patients</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Patient">
+                    <button>Search</button>
+                </div>
+                <div class="patient-list" id="patient-list">
+                    <h3>List of Patients</h3>
+                    <div id="patient-list-container" class="patient-blocks">
+                        
+                        <div class="patient-block" draggable="true" data-patient-id="1">Takina Ramy</div>
+                        <div class="patient-block" draggable="true" data-patient-id="2">Patient One</div>
+                        <div class="patient-block" draggable="true" data-patient-id="3">Patient Two</div>
+                        <div class="patient-block" draggable="true" data-patient-id="4">Patient Three</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Group Section -->
+            <div class="dashboard-section">
+                <h2>My Groups</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Group">
+                    <button>Search</button>
+                </div>
+                <div class="group-list" id="group-list">
+                    <h3>Your Groups</h3>
+                    <div id="group-list-container" class="group-dropzones">
+                        
+                        <p class="no-groups-message">No groups available. Please add a new group.</p>
+                    </div>
+                    
+                    <button id="add-group">+ Add New Group</button>
+                </div>
+            </div>
+
+            <!-- Session Section -->
+            <div class="dashboard-section">
+                <h2>Sessions</h2>
+                <div class="session-list" id="session-list">
+                    <ul id="session-list-container">
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notes Section -->
+            <div class="dashboard-section">
+                <h2>Notes</h2>
+                <div class="notes-list" id="notes-list">
+                    <ul id="notes-list-container">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    
+    <script src="../scripts/therapist-dashboard.js"></script>
+</body>
+</html>

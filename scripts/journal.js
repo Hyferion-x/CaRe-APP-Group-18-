@@ -1,8 +1,9 @@
+//weli0007
 document.getElementById('new-journal-entry').addEventListener('click', function() {
     document.getElementById('modal-title').textContent = 'New Journal Entry';
     clearModalFields();
     document.getElementById('journal-modal').style.display = 'flex';
-    document.getElementById('delete-entry').style.display = 'none'; // Hide delete button for new entries
+    document.getElementById('delete-entry').style.display = 'none'; 
 });
 
 document.getElementById('cancel-entry').addEventListener('click', function() {
@@ -73,7 +74,7 @@ function loadJournalEntries(searchKeyword = '', fromDate = '', toDate = '', targ
         .then(response => response.json())
         .then(data => {
             const targetContainer = document.getElementById(targetTable === 'journal-entries' ? 'journal-entries' : 'past-journal-entries');
-            targetContainer.innerHTML = ''; // Clear previous entries
+            targetContainer.innerHTML = ''; 
 
             data.forEach((entry, index) => {
                 const row = document.createElement('tr');
@@ -136,7 +137,7 @@ function loadMoodGraph() {
         .then(data => {
             const canvas = document.getElementById('mood-chart');
             const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous graph
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
             const moodCounts = {};
             data.forEach(entry => {
@@ -149,7 +150,7 @@ function loadMoodGraph() {
             const maxCount = Math.max(...counts);
             const barWidth = 40;
             const gap = 30;
-            const chartHeight = canvas.height - 50; // Padding from top
+            const chartHeight = canvas.height - 50; 
 
             moods.forEach((mood, index) => {
                 const x = index * (barWidth + gap) + 60;
@@ -176,14 +177,14 @@ function loadEnergyGraph() {
         .then(data => {
             const canvas = document.getElementById('energy-chart');
             const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous graph
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
             const dates = data.map(entry => entry.date);
             const energyLevels = data.map(entry => entry.energy_level);
 
             const maxEnergy = Math.max(...energyLevels);
             const minEnergy = Math.min(...energyLevels);
-            const chartHeight = canvas.height - 50; // Padding from top and bottom
+            const chartHeight = canvas.height - 50; 
 
             ctx.beginPath();
             ctx.moveTo(50, canvas.height - ((energyLevels[0] - minEnergy) / (maxEnergy - minEnergy)) * chartHeight - 30);
@@ -198,7 +199,7 @@ function loadEnergyGraph() {
             ctx.lineWidth = 2;
             ctx.stroke();
 
-            // Draw data points
+            
             energyLevels.forEach((energy, index) => {
                 const x = (index / (energyLevels.length - 1)) * (canvas.width - 100) + 50;
                 const y = canvas.height - ((energy - minEnergy) / (maxEnergy - minEnergy)) * chartHeight - 30;
@@ -215,7 +216,7 @@ function loadEnergyGraph() {
 function loadCustomMoodGraph(data = []) {
     const canvas = document.getElementById('custom-mood-chart');
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous graph
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
     const moodMap = {
         '😄': 'happy',
@@ -228,7 +229,7 @@ function loadCustomMoodGraph(data = []) {
     const moodCounts = { 'happy': 0, 'excited': 0, 'anxious': 0, 'sad': 0 };
     const totalEntries = data.length;
 
-    // Count the occurrences of each mood
+    
     data.forEach(entry => {
         if (moodCounts.hasOwnProperty(entry.mood)) {
             moodCounts[entry.mood]++;
@@ -238,7 +239,7 @@ function loadCustomMoodGraph(data = []) {
     const moods = Object.keys(moodCounts);
     const percentages = moods.map(mood => totalEntries ? (moodCounts[mood] / totalEntries) * 100 : 0);
 
-    // Set spacing between each emoji
+    
     const spacing = canvas.width / (moods.length + 1);
 
     // Draw mood icons and percentage bars
@@ -249,36 +250,36 @@ function loadCustomMoodGraph(data = []) {
 
         // Draw mood emoji
         ctx.font = '30px Arial';
-        ctx.fillText(emoji, xPos - 15, 40); // Center emoji over the bar
+        ctx.fillText(emoji, xPos - 15, 40); 
 
         // Draw percentage bar
         ctx.fillStyle = colors[index];
-        ctx.fillRect(xPos - 25, 50, 50, percentage * 1.5); // Center bar under emoji
+        ctx.fillRect(xPos - 25, 50, 50, percentage * 1.5); 
 
         // Draw percentage text
         ctx.fillStyle = '#333';
         ctx.font = '14px Arial';
-        ctx.fillText(`${Math.round(percentage)}%`, xPos - 15, 95); // Center percentage text
+        ctx.fillText(`${Math.round(percentage)}%`, xPos - 15, 95); 
     });
 }
 
-// Search button functionality
+
 document.getElementById('search-button').addEventListener('click', function() {
     const searchKeyword = document.getElementById('search-keyword').value;
     loadJournalEntries(searchKeyword);
 });
 
-// Filter button functionality
+
 document.getElementById('filter-button').addEventListener('click', function() {
     const fromDate = document.getElementById('from-date').value;
     const toDate = document.getElementById('to-date').value;
-    loadJournalEntries('', fromDate, toDate, 'past-journal-entries'); // Update target table to past-journal-entries
+    loadJournalEntries('', fromDate, toDate, 'past-journal-entries'); 
 });
 
 // Load journal entries and graphs on page load
 document.addEventListener('DOMContentLoaded', function() {
     loadJournalEntries();
-    loadMoodGraph(); // Load the mood graph when the page loads
-    loadEnergyGraph(); // Load the energy graph when the page loads
-    loadCustomMoodGraph(); // Load the custom mood graph when the page loads
+    loadMoodGraph(); 
+    loadEnergyGraph(); 
+    loadCustomMoodGraph(); 
 });

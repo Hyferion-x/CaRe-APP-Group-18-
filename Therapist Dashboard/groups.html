@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groups - Therapist Dashboard</title>
+    <link rel="stylesheet" href="../Therapist Dashboard/groups.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Patient">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html">Patients</a></li>
+                    <li><a href="groups.html" class="active">Groups</a></li>
+                    <li><a href="sessions.html">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="container">
+            
+            <div class="left-section">
+                <h2>My Groups</h2>
+                
+                
+                <div class="create-group-container">
+                    <input type="text" id="new-group-name" placeholder="Enter group name" required>
+                    <button class="create-group-btn" id="create-group-btn">Create Group</button>
+                </div>
+                
+
+                
+                <div class="group-list">
+                    <ul id="group-list">
+                        
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="right-section">
+                <h2 id="selected-group-name">Group Details</h2>
+
+                
+                <div class="group-details">
+
+                    
+                    <div class="group-box">
+                        <h3>Members</h3>
+                        <ul id="group-members">
+                            
+                        </ul>
+                        <button class="add-member-btn">+ Add Member</button>
+                    </div>
+
+                    
+                    <div class="group-box">
+                        <h3>Group Overview</h3>
+                        <canvas id="group-details-canvas" width="400" height="200"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    
+    <div id="add-member-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Member to Group</h2>
+            <form id="add-member-form">
+                <label for="patients">Select Patient:</label>
+                <select id="patients" name="patients">
+                    
+                </select>
+                <button type="submit">Add Member</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../scripts/groups.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions - Therapist Dashboard</title>
+    <link rel="stylesheet" href="../Therapist Dashboard/sessions.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Sessions">
+            <button class="srch_btn">Search</button>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html">Patients</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="sessions.html" class="active">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sessions Section -->
+        <div class="container">
+            
+            <div class="left-section">
+                <h2>Sessions</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Session" class="search-input">
+                    <button class="search-button">Search</button>
+                </div>
+                <div class="session-list">
+                    <h3>List of Sessions</h3>
+                    <ul id="session-list">
+                        
+                        <li>3 - 2024-10-12 at 11:24:00 <button class="remove-btn" onclick="removeSession(3)">Remove</button></li>
+                        <li>4 - 2024-10-12 at 11:28:00 <button class="remove-btn" onclick="removeSession(4)">Remove</button></li>
+                        
+                    </ul>
+                </div>
+                <button class="create-session" onclick="openCreateSessionModal()">Create Session</button>
+            </div>
+
+            
+            <div class="right-section">
+                <h2>Session Details</h2>
+                <div class="session-details">
+                    <div class="session-info">
+                        <h3 id="session-id">Session ID:</h3>
+                        <p><strong>Date:</strong> <span id="session-date"></span></p>
+                        <p><strong>Time:</strong> <span id="session-time"></span></p>
+                        <p><strong>Group Members:</strong> <span id="group-members"></span></p>
+                        <p><strong>Status:</strong> <span id="session-status"></span></p>
+
+                        <!-- Session Notes Section -->
+                        <div class="notes">
+                            <h3>Session Notes</h3>
+                            <textarea id="session-notes" placeholder="Add or edit session notes..."></textarea>
+                            <button class="save-note-btn" onclick="saveSessionNotes()">Save Notes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal for Creating a New Session -->
+<div id="create-session-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCreateSessionModal()">&times;</span>
+        <h2>Create a New Session</h2>
+        <form id="create-session-form" onsubmit="createNewSession(event)">
+            <label for="group-select">Select Group:</label>
+            <select id="group-select">
+                
+            </select>
+
+            <label for="session-date">Date:</label>
+            <input type="date" id="session-date-input" required>
+
+            <label for="session-time">Time:</label>
+            <input type="time" id="session-time-input" required>
+
+            <label for="session-status-input">Status:</label>
+            <select id="session-status-input" required>
+                <option value="">Select Status</option>
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+
+            
+            <label for="session-notes-input">Session Notes:</label>
+            <textarea id="session-notes-input" placeholder="Enter session notes"></textarea>
+
+            <button type="submit" class="create-session-btn">Create Session</button>
+        </form>
+    </div>
+</div>
+
+
+    
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    <script src="../scripts/sessions.js"></script>
+</body>
+</html>

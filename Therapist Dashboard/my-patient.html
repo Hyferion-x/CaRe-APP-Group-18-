@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Patients</title>
+    <link rel="stylesheet" href="../Therapist Dashboard/my-patient.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Patient" id="search-patient">
+            <a href="#"><button class="srch_btn" id="search-button">Search</button></a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Notifications</a>
+            <a href="profile.html">My Account</a>
+        </div>
+    </header>
+
+    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CaRe</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="therapist-dashboard.html">Home</a></li>
+                    <li><a href="my-patient.html" class="active">Patients</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="sessions.html">Sessions</a></li>
+                    <li><a href="tsupport.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="container">
+            
+            <div class="left-section">
+                <h2>My Patients</h2>
+                
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search Patient" id="patient-search-input">
+                    <button id="patient-search-button">Search</button>
+                </div>
+                
+                <div class="patient-list">
+                    <h3>List of Patients</h3>
+                    <ul id="patient-list">
+                        
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="right-section">
+                <h2>Individual Patient Profile</h2>
+                <div class="profile-details">
+                    <div class="info" id="patient-info">
+                        <p><strong>Name:</strong> <span id="patient-name"></span></p>
+                        <p><strong>Age:</strong> <span id="patient-age"></span></p>
+                        <p><strong>Patient ID:</strong> <span id="patient-id"></span></p>
+                        <p><strong>Phone:</strong> <span id="patient-phone"></span></p>
+                        <p><strong>Address:</strong> <span id="patient-address"></span></p>
+                        <p><strong>Gender:</strong> <span id="patient-gender"></span></p>
+                        <p><strong>Birthday:</strong> <span id="patient-birthday"></span></p>
+                        <p><strong>Allergies:</strong> <span id="patient-allergies"></span></p>
+                    </div>
+                    <div class="profile-photo">
+                        
+                        <img id="patient-photo" src="" alt="Patient's Profile Picture" style="max-width: 150px; border-radius: 10px; border: 2px solid #0074D9;">
+                    </div>
+                </div>
+                
+
+                
+                <div class="entry-list" style="display:none;">
+                    <table id="journal-entries-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Date</th>
+                                <th>Mood</th>
+                                <th>Energy Level</th>
+                                <th>Journal Entry</th>
+                            </tr>
+                        </thead>
+                        <tbody id="journal-entries">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <
+                <div class="notes-section">
+                    <div class="graphs-container">
+                        <div class="graph-item">
+                            <h3>Mood Graph</h3>
+                            <canvas id="mood-chart"></canvas> 
+                        </div>
+
+                        <div class="graph-item">
+                            <h3>Activity Log</h3>
+                            <canvas id="activity-chart"></canvas> 
+                        </div>
+                    </div>
+
+                    
+                    <div class="graphs-container">
+                        <div class="graph-item">
+                            <h3>How Are You Feeling?</h3>
+                            <canvas id="custom-mood-chart"></canvas> 
+                        </div>
+
+                        <div class="graph-item">
+                            <h3>Energy Chart</h3>
+                            <canvas id="energy-chart"></canvas> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    
+    <script src="../scripts/my-patient.js"></script>
+
+</body>
+</html>

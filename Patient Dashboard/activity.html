@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- //weli0007 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Page - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Patient Dashboard/activity.css">
+</head>
+<body>
+
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" placeholder="Search Appointments">
+            <a href="#"><button class="srch_btn">Search</button></a>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="patient-dashboard.html">Home</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="activity.html">Activities</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section class="activity-log">
+            <h2>Log a new Activity</h2>
+            <form class="log-form" id="activity-form" action="log_activity.php" method="POST">
+                <label for="activity-type">Activity Type:</label>
+                <select id="activity-type" name="activity-type">
+                    <option value="sleeping">Sleeping</option>
+                    <option value="eating">Eating Habits</option>
+                    <option value="exercise">Exercise</option>
+                </select>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit" id="activity-log-btn">Activity Log</button>
+            </form>
+
+            
+            <div id="activity-details" class="activity-details-container">
+                <h3>Activity Details</h3>
+                <p>Select an activity from the table below to view details.</p>
+                <div id="activity-detail-content" class="activity-detail-content">
+                    
+                    <p class="no-activity-selected">No activity selected</p> 
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="activity-summary">
+            <h2>Activity Summary</h2>
+
+            <div class="charts-container">
+                <!-- Bar Charts -->
+                <div class="chart">
+                    <h3>Today's Activity</h3>
+                    <canvas id="todayBarChart" width="400" height="200"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>This Week's Activity</h3>
+                    <canvas id="weekBarChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <!-- Pie Charts -->
+                <div class="chart">
+                    <h3>Today's Activity Summary</h3>
+                    <canvas id="todayPieChart" width="300" height="150"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>This Week's Activity Summary</h3>
+                    <canvas id="weekPieChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Activity Section (table) -->
+        <table id="past-activity-table">
+            <thead>
+                <tr>
+                    <th>Activity Type</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="past-activity-log">
+                <?php include 'fetch_activities.php'; ?>
+            </tbody>
+        </table>
+
+        <!-- To-Do List Section (View-Only) -->
+        <section class="todo-list">
+            <h2>To-Do List (Therapist Notes)</h2>
+            <?php include 'fetch_todo.php'; ?>
+        </section>
+    </main>
+
+    <footer>
+        <p>Help and FAQs</p>
+        <p>Settings and Preferences</p>
+        <p>Copyright @ Group 18 - WebX.Js Group 2024</p>
+    </footer>
+
+    <script src="../scripts/activity.js"></script>
+
+</body>
+</html>

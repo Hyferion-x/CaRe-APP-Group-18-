@@ -1,9 +1,14 @@
 <?php
+session_start();
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Connect to the database
+    
     $conn = new mysqli('localhost', 'root', '', 'care_db');
 
-    // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -25,36 +30,56 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $bio = $conn->real_escape_string($_POST['bio']);
     $role = $conn->real_escape_string($_POST['role']);
 
-    // Handle file upload for photo
-    if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
-        $photo = $_FILES['photo']['name'];
-        $photoTmpName = $_FILES['photo']['tmp_name'];
-        $photoPath = 'uploads/' . basename($photo);
-        move_uploaded_file($photoTmpName, $photoPath);
-    } else {
-        $photoPath = NULL; // No photo uploaded
-    }
-
     // Validate passwords
     if ($password !== $confirmPassword) {
-        die("Passwords do not match.");
+        die(json_encode(['error' => 'Passwords do not match.']));
+    }
+
+    // Check if username or email already exists
+    $checkUserSql = "SELECT id FROM users WHERE username='$username' OR email='$email'";
+    $checkUserResult = $conn->query($checkUserSql);
+
+    if ($checkUserResult && $checkUserResult->num_rows > 0) {
+        die(json_encode(['error' => 'Username or email already exists. Please choose another.']));
+    }
+
+    // Handle file upload (photo)
+    $targetDir = "uploads/";  
+    $photoPath = NULL;
+
+    if (!empty($_FILES['photo']['name'])) {
+        $photoName = basename($_FILES['photo']['name']);
+        $targetFilePath = $targetDir . $photoName;
+        $imageFileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+
+        // Validate image type
+        $validExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+        if (in_array($imageFileType, $validExtensions)) {
+            if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFilePath)) {
+                $photoPath = $targetFilePath; 
+            } else {
+                die(json_encode(['error' => 'There was an error uploading the file.']));
+            }
+        } else {
+            die(json_encode(['error' => 'Only JPG, JPEG, PNG & GIF files are allowed.']));
+        }
     }
 
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert user into the database
-    $sql = "INSERT INTO users (username, email, password, name, photo, phone, mobile, address, gender, birthday, allergies, blood_type, insurance_id, bio, role)
-            VALUES ('$username', '$email', '$hashedPassword', '$name', '$photoPath', '$phone', '$mobile', '$address', '$gender', '$birthday', '$allergies', '$blood_type', '$insurance_id', '$bio', '$role')";
+    
+    $sql = "INSERT INTO users (username, email, password, name, phone, mobile, address, gender, birthday, allergies, blood_type, insurance_id, bio, role, photo)
+            VALUES ('$username', '$email', '$hashedPassword', '$name', '$phone', '$mobile', '$address', '$gender', '$birthday', '$allergies', '$blood_type', '$insurance_id', '$bio', '$role', '$photoPath')";
 
     if ($conn->query($sql) === TRUE) {
-        // Redirect to login page
-        header('Location: login.html');
+        
+        echo json_encode(['success' => true, 'message' => 'Signup successful.']);
     } else {
-        die("Database error: " . $conn->error);
+        die(json_encode(['error' => 'Database error: ' . $conn->error]));
     }
 
-    // Close the connection
+    
     $conn->close();
 }
 ?>

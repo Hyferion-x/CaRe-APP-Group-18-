@@ -1,0 +1,48 @@
+Array
+(
+    [group_id] => 95
+    [date] => 2024-10-12
+    [time] => 02:42
+    [notes] => sdsd
+    [status] => Pending
+)
+Array
+(
+    [group_id] => 96
+    [date] => 2024-10-06
+    [time] => 14:49
+    [notes] => fgdfg
+    [status] => Pending
+)
+Array
+(
+    [group_id] => 107
+    [date] => 2024-10-12
+    [time] => 03:26
+    [notes] => 452454
+    [status] => Pending
+)
+Array
+(
+    [group_id] => 108
+    [date] => 2024-10-06
+    [time] => 15:57
+    [notes] => sedfsdf
+    [status] => Completed
+)
+Array
+(
+    [group_id] => 111
+    [date] => 2024-10-06
+    [time] => 16:02
+    [notes] => gvhghjj
+    [status] => Completed
+)
+Array
+(
+    [group_id] => 115
+    [date] => 2024-10-11
+    [time] => 02:03
+    [notes] => asas
+    [status] => Completed
+)

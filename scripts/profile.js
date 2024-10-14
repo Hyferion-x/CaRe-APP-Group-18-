@@ -1,110 +1,142 @@
-// Toggle dropdown menu for profile actions
-function toggleMenu() {
-    var dropdownMenu = document.getElementById("dropdownMenu");
-    dropdownMenu.classList.toggle("show");
+//weli0007
+document.addEventListener('DOMContentLoaded', function() {
+    fetchUserProfile();
+
+    const editBtn = document.getElementById('edit-btn');
+    const saveBtn = document.getElementById('save-btn');
+    const formFields = document.querySelectorAll('#edit-profile-form input, #edit-profile-form select, #edit-contact-form input');
+
+    
+    toggleFormFields(formFields, true);
+
+    
+    editBtn.addEventListener('click', function() {
+        toggleFormFields(formFields, false); 
+        toggleButtons(editBtn, saveBtn, false); 
+    });
+
+    // Save the form data when clicking the Save button
+    saveBtn.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        if (validateEmail()) {
+            saveProfile(); 
+        } else {
+            alert('Invalid email address. Please enter a valid email.');
+        }
+    });
+});
+
+// Function to validate email
+function validateEmail() {
+    const email = document.getElementById('edit-email').value;
+    const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return emailPattern.test(email);
 }
 
-// Handle clicks outside of dropdown or modals
-window.onclick = function(event) {
-    // Close dropdown if clicked outside
-    if (!event.target.matches('#menu_img')) {
-        var dropdowns = document.getElementsByClassName("dropdown");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+// Function to fetch user profile 
+function fetchUserProfile() {
+    fetch('fetch-user-profile.php') 
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error('Error fetching profile data:', data.error);
+                alert('Error fetching profile. Please try again.');
+                return;
             }
+
+            // Handle the profile photo
+            const profilePhoto = document.getElementById('profile-photo');
+            
+            
+            if (data.photo) {
+                
+                profilePhoto.src = `/CaRe/${data.photo}`;
+            } else {
+                profilePhoto.src = ''; 
+            }
+
+            profilePhoto.onerror = function() {
+                
+                console.error('Image failed to load:', profilePhoto.src);
+            };
+
+            
+            document.getElementById('profile-name').textContent = data.name || 'Name not available';
+            document.getElementById('profile-bio').textContent = data.bio || 'No bio available';
+
+            
+            document.getElementById('edit-username').value = data.username || '';
+            document.getElementById('edit-gender').value = data.gender || '';
+            document.getElementById('edit-birthday').value = data.birthday || '';
+            document.getElementById('edit-blood-type').value = data.blood_type || '';
+            document.getElementById('edit-allergies').value = data.allergies || '';
+            document.getElementById('edit-insurance-id').value = data.insurance_id || '';
+
+            
+            document.getElementById('edit-email').value = data.email || '';
+            document.getElementById('edit-phone').value = data.phone || '';
+            document.getElementById('edit-mobile').value = data.mobile || '';
+            document.getElementById('edit-address').value = data.address || '';
+        })
+        .catch(error => {
+            console.error('Error fetching profile data:', error);
+            alert('Error fetching profile data. Please try again later.');
+            document.getElementById('profile-name').textContent = 'Error loading name';
+            document.getElementById('profile-bio').textContent = 'Error loading bio';
+            document.getElementById('profile-photo').src = '';
+        });
+}
+
+
+// Function to save the profile data
+function saveProfile() {
+    const formData = new FormData(document.getElementById('edit-profile-form'));
+    const contactData = new FormData(document.getElementById('edit-contact-form'));
+
+    for (let pair of contactData.entries()) {
+        formData.append(pair[0], pair[1]);
+    }
+
+    fetch('save-user-profile.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Profile updated successfully');
+            fetchUserProfile(); 
+
+            // Disable form fields again after saving
+            toggleFormFields(document.querySelectorAll('#edit-profile-form input, #edit-profile-form select, #edit-contact-form input'), true);
+
+            // Switch buttons back to initial state
+            toggleButtons(document.getElementById('edit-btn'), document.getElementById('save-btn'), true);
+        } else {
+            console.error('Error updating profile:', data.error || 'Unknown error');
+            alert('Error updating profile. Please try again.');
         }
+    })
+    .catch(error => {
+        console.error('Error saving profile data:', error);
+        alert('Error saving profile data. Please try again later.');
+    });
+}
+
+// function to enable or disable form fields
+function toggleFormFields(fields, disable) {
+    fields.forEach(field => {
+        field.disabled = disable;
+    });
+}
+
+// function to toggle between Edit and Save buttons
+function toggleButtons(editBtn, saveBtn, isEditMode) {
+    if (isEditMode) {
+        editBtn.style.display = 'inline-block';
+        saveBtn.style.display = 'none';
+    } else {
+        editBtn.style.display = 'none';
+        saveBtn.style.display = 'inline-block';
     }
-  
-    // Close edit profile modal if clicked outside
-    var editModal = document.getElementById("editProfileModal");
-    if (editModal && event.target == editModal) {
-        closeModal();
-    }
-  
-    // Close general info modal if clicked outside
-    var generalInfoModal = document.getElementById("generalInfoForm");
-    if (generalInfoModal && event.target == generalInfoModal) {
-        closegeneral();
-    }
 }
-
-// Open edit profile modal
-function openModal() {
-    document.getElementById("editProfileModal").style.display = "block";
-    toggleMenu(); // Optionally close the dropdown menu when opening the modal
-}
-
-// Close edit profile modal
-function closeModal() {
-    document.getElementById("editProfileModal").style.display = "none";
-}
-
-// Open and close general info form
-function openForm(formId) {
-    document.getElementById(formId).style.display = 'block';
-}
-
-function closeForm(formId) {
-    document.getElementById(formId).style.display = 'none';
-}
-
-function closegeneral() {
-    document.getElementById("generalInfoForm").style.display = "none";
-}
-
-// Update profile picture
-document.getElementById('profilePic').addEventListener('click', function() {
-    document.getElementById('profilePicInput').click();
-});
-
-document.getElementById('profilePicInput').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('profilePic').src = e.target.result;
-        }
-        reader.readAsDataURL(file);
-    }
-});
-
-// Update general info
-function updateGeneralInfo(event) {
-    event.preventDefault(); // Prevent form from submitting
-
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-
-    // Update the display content
-    document.getElementById('display-name').innerText = name;
-    document.getElementById('display-email').innerText = email;
-    document.getElementById('display-phone').innerText = phone;
-
-    // Close the form
-    closeForm('generalInfoForm');
-}
-
-// Display medical information
-document.getElementById('display-info').addEventListener('click', function() {
-    // Get selected weight unit and input value
-    const weightUnit = document.getElementById('weight-select').value;
-    const weight = document.getElementById('weight-input').value;
-
-    // Get selected height unit and input value
-    const heightUnit = document.getElementById('height-select').value;
-    const height = document.getElementById('height-input').value;
-
-    // Get the name of the uploaded file
-    const medicalReport = document.getElementById('medical-report').files[0] 
-        ? document.getElementById('medical-report').files[0].name 
-        : 'No file selected';
-
-    // Display the weight and height with units
-    document.getElementById('display-weight').textContent = weight ? `${weight} ${weightUnit}` : 'Not entered';
-    document.getElementById('display-height').textContent = height ? `${height} ${heightUnit}` : 'Not entered';
-    document.getElementById('display-report').textContent = medicalReport;
-});
