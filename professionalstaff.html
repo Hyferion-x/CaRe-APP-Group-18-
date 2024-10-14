@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Staff Dashboard</title>
+    <link rel="stylesheet" href="css/professionalstaff.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="professionalstaff.html">Professional Staff Dashboard</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Search Patients</h2>
+            <input type="search" id="search-input" placeholder="Search by name or ID">
+            <button id="search-button">Search</button>
+            <div id="filters">
+                <h3>Filters</h3>
+                <label>
+                    <input type="checkbox" id="filter-by-age">
+                    Age
+                </label>
+                <label>
+                    <input type="checkbox" id="filter-by-location">
+                    Location
+                </label>
+            </div>
+            <div id="search-results"></div>
+        </aside>
+        <main>
+            <div class="main-panel">
+                <div class="patient-details">
+                    <h2>Patient Demographics</h2>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Age:</strong> 45</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Contact:</strong> johndoe@example.com</p>
+                    <p><strong>Phone:</strong> +1234567890</p>
+                </div>
+                <div class="appointment-schedule">
+                    <h2>Appointment Schedule</h2>
+                    <div id="calendar">
+                        <div id="monthYear"></div>
+                        <div id="daysOfWeek"></div>
+                        <div id="days"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="right-panel">
+            <h2>Patient Actions</h2>
+            <button id="createPatientBtn">Create New Patient</button>
+            <button id="editPatientBtn">Edit Patient Details</button>
+            <button id="updateHistoryBtn">Update Medical History</button>
+            <button id="addAppointmentBtn">Add Appointment</button>
+            <button id="deletePatientBtn">Delete Patient Record</button>
+        </section>
+    </div>
+
+    <!-- Popup Form for Create/Edit Patient -->
+    <div id="patientFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="formTitle">Create New Patient</h3>
+            <form id="patientForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="contact">Contact Information:</label>
+                <input type="text" id="contact" name="contact" required>
+                <label for="therapist">Therapist Assignment:</label>
+                <input type="text" id="therapist" name="therapist" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Form for Medical History -->
+    <div id="medicalHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Update Medical History</h3>
+            <form id="medicalHistoryForm">
+                <label for="history">Medical Notes:</label>
+                <textarea id="history" name="history" required></textarea>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Form for Appointment -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Appointment</h3>
+            <form id="appointmentForm">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="sessionType">Session Type:</label>
+                <input type="text" id="sessionType" name="sessionType" required>
+                <button type="submit">Schedule</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/professionalstaff.js"></script>
+</body>
+</html>
