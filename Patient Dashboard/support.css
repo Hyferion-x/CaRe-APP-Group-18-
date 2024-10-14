@@ -3,93 +3,153 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: #e3f2fd; /* Light blue */
+    color: #333; /* Dark gray text */
+    transition: all 0.3s ease;
 }
 
+/* Header Styling */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #001f3f; /* Dark blue */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 10px 20px;
+    background-color: #0d47a1;
     color: white;
-    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-header .contact-icons a img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
+.contact-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.contact-icons a {
+    margin-right: 15px;
+}
+
+.contact-icons a img {
+    width: 30px; /* Increase icon size */
+    height: 30px; /* Increase icon size */
+}
+
+/* Search Bar */
 .search {
-    flex-grow: 1;
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align search bar to the left */
+    gap: 10px;
+    margin-left: 20px; /* Add margin to align it properly with the icons */
 }
 
-.search .srch {
-    width: 200px;
-    padding: 10px;
+.srch {
+    padding: 12px 20px;
+    border-radius: 30px;
     border: none;
-    border-radius: 5px;
-    background-color: #ddd;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1rem;
+    width: 300px;
 }
 
-.search .srch_btn {
-    padding: 10px;
-    background-color: #0074D9; /* Blue */
+.srch:focus {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
+    outline: none;
+}
+
+.srch::placeholder {
+    color: #0074D9;
+    font-weight: 300;
+}
+
+.srch_btn {
+    padding: 12px 20px;
+    background-color: #0074D9;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-left: 8px;
+    margin-top: 2px; /* Add this to move the button up */
+}
+
+.srch_btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .nav-right a {
     color: white;
     margin-left: 20px;
     text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
+.nav-right a:hover {
+    color: #80d8ff;
+}
+
+/* Navbar */
 .navbar {
-    margin-top: 60px;
-    background-color: #001f3f; /* Dark blue */
-    padding: 20px;
+    background-color: #0074D9; /* Blue */
+    padding: 15px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.navbar .icon .logo {
-    color: #0074D9; /* Lighter blue */
+.navbar .logo {
+    color: #80d8ff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 116, 217, 0.5);
+    margin-left: 30px;
 }
 
-.navbar .menu ul {
+.menu ul {
     display: flex;
     list-style-type: none;
 }
 
-.navbar .menu ul li {
-    margin-left: 30px;
+.menu ul li {
+    margin-left: 20px;
 }
 
-.navbar .menu ul li a {
+.menu ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
 }
 
-.navbar .menu ul li a:hover {
-    color: #0074D9; /* Lighter blue on hover */
+.menu ul li a:hover {
+    color: #80d8ff;
+    text-shadow: 0 2px 8px rgba(0, 116, 217, 0.7);
 }
 
+/* Main Content */
 .main {
     margin-top: 100px;
     padding: 20px;
@@ -102,13 +162,13 @@ header .contact-icons a img {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .support-section h2 {
     text-align: center;
     margin-bottom: 10px;
-    color: #001f3f;
+    color: #0074D9;
 }
 
 .support-section p {
@@ -119,10 +179,11 @@ header .contact-icons a img {
 
 .support-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
+/* FAQ Section */
 .faq-section {
     padding: 20px;
     border: 1px solid #0074D9;
@@ -131,12 +192,8 @@ header .contact-icons a img {
 }
 
 .faq-section h3 {
-    color: #001f3f;
+    color: #0d47a1;
     margin-bottom: 20px;
-}
-
-.faq {
-    margin-bottom: 15px;
 }
 
 .faq h4 {
@@ -148,6 +205,7 @@ header .contact-icons a img {
     color: #333;
 }
 
+/* Contact Form */
 .contact-form-section {
     padding: 20px;
     border: 1px solid #0074D9;
@@ -156,7 +214,7 @@ header .contact-icons a img {
 }
 
 .contact-form-section h3 {
-    color: #001f3f;
+    color: #0d47a1;
     margin-bottom: 20px;
 }
 
@@ -175,6 +233,7 @@ header .contact-icons a img {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: #f5f5f5;
 }
 
 .submit-btn {
@@ -182,15 +241,18 @@ header .contact-icons a img {
     background-color: #0074D9;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #005f99;
+    background-color: #005bb5;
+    transform: translateY(-2px);
 }
 
+/* Help Resources */
 .help-resources {
     margin-top: 30px;
     text-align: center;
@@ -198,7 +260,7 @@ header .contact-icons a img {
 
 .help-resources h3 {
     margin-bottom: 10px;
-    color: #001f3f;
+    color: #0074D9;
 }
 
 .help-resources ul {
@@ -213,18 +275,44 @@ header .contact-icons a img {
 .help-resources ul li a {
     color: #0074D9;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .help-resources ul li a:hover {
+    color: #80d8ff;
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
-    background-color: #001f3f;
+    background-color: #0d47a1;
     color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .logo {
+        margin-left: 10px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+
+    .support-section {
+        padding: 20px;
+    }
 }
