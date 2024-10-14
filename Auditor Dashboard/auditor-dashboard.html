@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditor Dashboard - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Auditor Dashboard/auditor-dashboard.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" id="patient-search" placeholder="Search Patients">
+            <a href="#"><button class="srch_btn" id="search-button">Search</button></a>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    
+    <div class="container">
+        <h2>Assign Therapists to Patients</h2>
+
+        
+        <table id="patientTable">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Current Therapist</th>
+                    <th>Assign New Therapist</th>
+                </tr>
+            </thead>
+            <tbody id="patient-list">
+                
+            </tbody>
+        </table>
+
+        <button id="saveAssignmentsBtn" disabled>Save Assignments</button>
+    </div>
+
+    
+    <footer>
+        <p>Help and FAQs</p>
+        <p>Settings and Preferences</p>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    <script src="../scripts/auditor-dashboard.js"></script>
+</body>
+</html>

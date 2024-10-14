@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Calm and Reflect</title>
+    <link rel="stylesheet" href="../Staff Dashboard/staff-dashboard.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="contact-icons">
+            <a href="#"><img src="../images/phone.png" alt="Phone"></a>
+            <a href="#"><img src="../images/envelope.png" alt="Email"></a>
+            <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="search">
+            <input class="srch" type="search" id="patient-search" placeholder="Search Patients">
+            <a href="#"><button class="srch_btn" id="search-button">Search</button></a>
+        </div>
+        <div class="account">
+            <i class="fa fa-user"></i>
+            <a href="#">My Account</a>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Patients</a></li>
+            <li><a href="#">Therapist</a></li>
+            <li><a href="#">Scheduling</a></li>
+            <li><a href="#">Reports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h2>Search Patients</h2>
+            <input type="search" id="search-input" placeholder="Search by name or ID">
+            <button id="search-button">Search</button>
+            <div id="search-results"></div>
+
+            <!-- Patient Actions (Moved to Sidebar) -->
+            <h2>Patient Actions</h2>
+            <button id="editPatientBtn">Edit Patient Details</button>
+            <button id="updatePatientBtn" disabled>Update Patient Details</button>
+        </aside>
+
+        <!-- Main Panel -->
+        <main>
+            <div class="main-panel">
+                <!-- Patient Demographics Section -->
+                <div class="patient-details">
+                    <h2>Patient Demographics</h2>
+                    <p><strong>Name:</strong> <input type="text" id="patient-name" disabled></p>
+                    <p><strong>Age:</strong> <input type="text" id="patient-age" disabled></p>
+                    <p><strong>Gender:</strong> 
+                        <select id="patient-gender" disabled>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </p>
+                    <p><strong>Email:</strong> <input type="email" id="patient-email" disabled></p>
+                    <p><strong>Phone:</strong> <input type="text" id="patient-phone" disabled></p>
+                    <p><strong>Mobile:</strong> <input type="text" id="patient-mobile" disabled></p>
+                    <p><strong>Address:</strong> <textarea id="patient-address" disabled></textarea></p>
+                    <p><strong>Birthday:</strong> <input type="date" id="patient-birthday" disabled></p>
+                    <p><strong>Allergies:</strong> <textarea id="patient-allergies" disabled></textarea></p>
+                    <p><strong>Blood Type:</strong> <input type="text" id="patient-blood-type" disabled></p>
+                    <p><strong>Insurance ID:</strong> <input type="text" id="patient-insurance-id" disabled></p>
+                    <p><strong>Bio:</strong> <textarea id="patient-bio" disabled></textarea></p>
+                </div>
+
+                <!-- Appointment Schedule Section -->
+                <div class="appointment-schedule">
+                    <h2>Appointment Schedule</h2>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Popup Form for Medical History -->
+    <div id="medicalHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Update Medical History</h3>
+            <form id="medicalHistoryForm">
+                <label for="history">Medical Notes:</label>
+                <textarea id="history" name="history" required></textarea>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Form for Appointment -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Appointment</h3>
+            <form id="appointmentForm">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="sessionType">Session Type:</label>
+                <input type="text" id="sessionType" name="sessionType" required>
+                <button type="submit">Schedule</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Help and FAQs</p>
+        <p>Settings and Preferences</p>
+        <p>&copy; Group 18 - WebX.js Group 2024</p>
+    </footer>
+
+    <script src="../scripts/staff-dashboard.js"></script>
+</body>
+</html>

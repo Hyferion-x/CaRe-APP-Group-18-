@@ -1,4 +1,4 @@
-/* General styling */
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #e3f2fd; /* Light blue background */
+    background-color: #e3f2fd;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
 
 /* Header */
 header {
-    background-color: #0d47a1; /* Dark blue */
+    background-color: #0d47a1;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -33,8 +33,7 @@ header {
     align-items: center;
 }
 
-.search .srch {
-    width: 300px;
+.search input {
     padding: 10px;
     border: none;
     border-radius: 30px;
@@ -44,14 +43,14 @@ header {
     transition: all 0.3s ease;
 }
 
-.search .srch:focus {
-    background-color: #ffffff;
+.search input:focus {
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 116, 217, 0.5);
 }
 
-.search .srch_btn {
+.search button {
     padding: 10px 20px;
-    background-color: #0074D9; /* Blue button */
+    background-color: #0074D9;
     border: none;
     color: white;
     border-radius: 30px;
@@ -60,9 +59,9 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.search .srch_btn:hover {
-    background-color: #005bb5; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect */
+.search button:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
 }
 
 .nav-right a {
@@ -75,12 +74,12 @@ header {
 }
 
 .nav-right a:hover {
-    color: #0074D9; /* Change color on hover */
+    color: #0074D9;
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #0d47a1; /* Same as header */
+    background-color: #0d47a1;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -88,7 +87,7 @@ header {
 }
 
 .logo {
-    color: #80d8ff; /* Light blue for logo */
+    color: #80d8ff;
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 0 4px 8px rgba(0, 116, 217, 0.5);
@@ -111,7 +110,7 @@ header {
 }
 
 .menu ul li a:hover {
-    color: #80d8ff; /* Change color on hover */
+    color: #80d8ff;
     text-shadow: 0 2px 8px rgba(0, 116, 217, 0.7);
 }
 

@@ -6,11 +6,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html, body {
-    height: 100%;
+body {
     background-color: #e3f2fd;
     color: #333;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -18,41 +19,28 @@ header {
     background-color: #0d47a1;
     color: white;
     display: flex;
-    justify-content: flex-start; /* Align elements to the start */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #0a36a0;
 }
 
-/* Adjust the contact icons section */
-.contact-icons {
-    display: flex;
-    gap: 10px; /* Space between icons */
-    margin-right: 20px; /* Space between icons and search bar */
-}
-
-.contact-icons a img {
-    width: 24px;
-    height: 24px;
-}
-
-/* Adjust search bar to be inline with icons */
 .search {
+    flex-grow: 1;
+    margin-left: 20px;
     display: flex;
     align-items: center;
 }
 
 .search input {
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 10px;
     border: none;
+    border-radius: 30px;
     background-color: #f5f5f5;
-    transition: all 0.3s ease;
+    margin-right: 10px;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 10px; /* Space between input and button */
+    transition: all 0.3s ease;
 }
 
 .search input:focus {
@@ -74,11 +62,6 @@ header {
 .search button:hover {
     background-color: #005bb5;
     transform: translateY(-2px);
-}
-
-/* Adjust nav-right to stay aligned with search */
-.nav-right {
-    margin-left: auto; /* Push notifications and account to the far right */
 }
 
 .nav-right a {
